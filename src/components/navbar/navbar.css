@@ -1,0 +1,134 @@
+.navbar {
+  /* border: 2px solid black; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  background-color: #1c74f7;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 1px #000000;
+  position: fixed;
+  top: 0;
+  font-size: 18px;
+}
+.logo {
+  /* border: 2px solid black; */
+  color: #ffffff;
+  margin-left: 50px;
+}
+.links {
+  display: flex;
+  margin-right: 100px;
+  /* border: 2px solid red; */
+  gap: 50px;
+  /* padding: 6px; */
+}
+.link,
+.user-access {
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.linktoevent:hover {
+  color: #fff;
+}
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+}
+.link:hover {
+  background-color: #ffffff;
+  color: #1c74f7;
+}
+.user-access:hover {
+  background-color: #00848c;
+  color: #1c74f7;
+}
+.link:hover .nav-link {
+  color: #1c74f7;
+}
+.link:hover .account-username {
+  color: #fff;
+}
+.account-username {
+  text-transform: capitalize;
+}
+.warning {
+  /* border: 2px solid red; */
+  position: absolute;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  padding: 4px 20px;
+  color: red;
+  border-radius: 8px;
+}
+.closeWarning {
+  align-self: flex-start;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+.menu-icon {
+  display: none;
+}
+.hide-bars {
+  display: none;
+}
+.close-links {
+  color: rgb(238, 64, 12);
+  font-size: 28px;
+  display: flex;
+  justify-content: right;
+  margin: 20px;
+  display: none;
+}
+/*media query*/
+@media (max-width: 768px) {
+  .links {
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    gap: 50px;
+    display: none;
+  }
+
+  .showlinks {
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80vh;
+    width: 100%;
+    background-color: #1c74f7;
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    gap: 50px;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .logo {
+    /* border: 2px solid black; */
+    color: #ffffff;
+    margin-left: 10px;
+  }
+  .close-links {
+    display: flex;
+  }
+}
