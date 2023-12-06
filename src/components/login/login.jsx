@@ -18,7 +18,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    const api = "http://localhost:3000/auth/login";
+    const api = "https://events-server-2d4h.onrender.com/auth/login";
     try {
       const response = await fetch(api, {
         method: "POST",

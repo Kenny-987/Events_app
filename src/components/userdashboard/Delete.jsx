@@ -9,14 +9,17 @@ const Delete = () => {
   const deleteAccount = async () => {
     try {
       // Send DELETE request to the server to delete the account
-      const response = await fetch(`http://localhost:3000/auth/delaccount`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          // Include authentication token if required
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `https://events-server-2d4h.onrender.com/auth/delaccount`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            // Include authentication token if required
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       console.log(response);
       if (response.ok) {
         logout();

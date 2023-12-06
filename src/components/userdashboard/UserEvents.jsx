@@ -16,7 +16,7 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
 
   const handleDelete = (_id) => {
     // Send DELETE request to the server to delete the event
-    fetch(`http://localhost:3000/event/delete/${_id}`, {
+    fetch(`https://events-server-2d4h.onrender.com/event/delete/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
