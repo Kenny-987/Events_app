@@ -9,7 +9,7 @@ const Events = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const api = "http://localhost:3000/event/activities";
-
+  //const webapi
   useEffect(() => {
     const getEvents = async () => {
       try {

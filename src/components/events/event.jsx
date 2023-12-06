@@ -83,7 +83,11 @@ const Event = ({ data }) => {
                   <FontAwesomeIcon className="icon" icon={faDollarSign} />
                   Entry Fee
                 </p>
-                <p className="price">${fee}</p>
+                {fee == null ? (
+                  <p className="price">free</p>
+                ) : (
+                  <p className="price">${fee}</p>
+                )}
               </div>
             </div>
           </div>
@@ -96,4 +100,4 @@ const Event = ({ data }) => {
   );
 };
 export default Event;
-// <EventDetails data={selectedEvent} closeDetails={() => setSelectedEvent(null)} />
+

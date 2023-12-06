@@ -33,7 +33,7 @@ const Navbar = () => {
   };
   return (
     <header className="navbar">
-      <div className="logo">byohaps</div>
+      <div className="logo">EventFlow</div>
       <div
         className={`${mobileMenuOpen ? "hide-bars" : "menu-icon"}`}
         onClick={toggleMobileMenu}
