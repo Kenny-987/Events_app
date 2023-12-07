@@ -64,16 +64,28 @@
   width: 80%;
   margin: auto;
   text-align: center;
-  color: teal;
+  color: rgb(10, 55, 201);
 }
 .modal input,
 label {
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 .modal input {
   margin-bottom: 10px;
   outline: none;
+  color: #011f4d;
+  font-size: 16px;
+  border: 1px solid rgb(212, 212, 212);
+  background-color: #f0f0f0;
+  padding: 2px;
+  border-radius: 4px;
+}
+.modal input:focus {
+  color: #074aad;
+  outline: none;
+  border: 1px solid #1c74f7;
+  background-color: #fff;
 }
 .modal textarea {
   background-color: #f1f1f1;
@@ -81,9 +93,7 @@ label {
   padding: 4px;
   resize: none;
   height: 100px;
-  width: 80%;
-  margin: auto;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .modal textarea:focus {
   outline: none;

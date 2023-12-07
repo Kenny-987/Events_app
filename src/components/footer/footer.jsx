@@ -50,7 +50,7 @@ const Footer = () => {
   return (
     <section className="footer">
       <div className="footer-item contacts">
-        <h4>Contact Me</h4>
+        <h4>Contact Us</h4>
         <p>
           <FontAwesomeIcon icon={faPhone} /> +263789644097
         </p>
