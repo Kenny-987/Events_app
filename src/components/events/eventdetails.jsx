@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
-import bg from "../../assets/food1.jpg";
 const EventDetails = ({ closeDetails, data }) => {
   const {
     title,

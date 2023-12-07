@@ -27,7 +27,7 @@ const Footer = () => {
     e.preventDefault();
     console.log("clicked");
     setIsLoading(true);
-    const api = "http://localhost:3000/mail/send-email";
+    const api = "https://events-server-2d4h.onrender.com/mail/send-email";
     try {
       const response = await fetch(api, {
         method: "POST",
@@ -37,7 +37,7 @@ const Footer = () => {
         body: JSON.stringify({ email, subject, message }),
       });
       if (response.ok) {
-        console.log("Feedback submitted:", feedback);
+        console.log("Feedback submitted: ", message);
         closeFeedbackForm();
       } else {
         console.log(response.status);
