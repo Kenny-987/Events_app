@@ -2,7 +2,7 @@ import SignUp from "./components/login/signup";
 import Home from "./components/home";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/login/login";
-import Layout from "./layout";
+import Layout from "./Layout";
 import AddEvent from "./components/events/addevent";
 import Dashboard from "./components/userdashboard/dashboard";
 import About from "./components/footer/about";
