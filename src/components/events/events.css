@@ -258,3 +258,8 @@
     width: 100%;
   }
 }
+@media (max-height: 700px) {
+  .events {
+    margin-top: 30px;
+  }
+}
