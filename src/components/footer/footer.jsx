@@ -15,6 +15,8 @@ const Footer = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
+  const [error, setError] = useState(false);
   const openFeedbackForm = () => {
     setIsFeedbackOpen(true);
   };
@@ -38,13 +40,26 @@ const Footer = () => {
       });
       if (response.ok) {
         console.log("Feedback submitted: ", message);
-        closeFeedbackForm();
+        setMessage("");
+        setSubject("");
+        setEmail("");
+        setMessageSent(true);
+        setTimeout(() => {
+          setMessageSent(false);
+          closeFeedbackForm();
+        }, 3000);
+        setIsLoading(false);
       } else {
         console.log(response.status);
         setIsLoading(false);
       }
     } catch (error) {
       console.error("Error:", error);
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 3000);
+      setIsLoading(false);
     }
   };
   return (
@@ -81,10 +96,14 @@ const Footer = () => {
             </span>
             <h2>Feedback</h2>
             <form onSubmit={handleSubmit}>
+              {error && (
+                <div className="error">Error Sending Feedback, Try again</div>
+              )}
               <p>
                 {" "}
                 Leave feedback and let us know about bugs, features you'd like
-                to see or improvements we can make on the site
+                to see or improvements we can make on the site to enhance user
+                experience. Any feedback is greatly appreciated.
               </p>
               <label htmlFor="email">Email:</label>
               <input
@@ -125,6 +144,9 @@ const Footer = () => {
                   </button>
                 )}
               </div>
+              {messageSent && (
+                <div className="done">Message Sent Successfully</div>
+              )}
             </form>
           </div>
         </div>
