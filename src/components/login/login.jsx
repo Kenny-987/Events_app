@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../../authContext";
 import "./signup.css";
-import { set } from "date-fns";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -14,6 +13,12 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth(); // getting login fuction from context api to set user values
+
+  const setCookie = (name, value, days) => {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,8 +35,14 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         const dataToStore = JSON.stringify(data);
+        const { user, token } = data;
+
+        // Store user information in cookies
+        setCookie("user", user, 7); // Expires in 7 days
+        setCookie("token", token, 7);
         sessionStorage.setItem("userData", dataToStore); //storing data in session storage
         setIslogged(true);
+
         setTimeout(() => {
           setIslogged(false);
           navigate("/");
