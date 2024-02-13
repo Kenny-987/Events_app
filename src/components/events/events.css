@@ -299,12 +299,15 @@ margin-left: 10px;
 @media (max-width: 768px) {
   .events-container {
     margin-top: 20px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     max-width: 100vw;
     white-space: nowrap;
     overflow-x: scroll;
     padding: 10px;
     scroll-snap-type: x mandatory;
+    border:1px solid blue;
   }
 
   .nodata {
@@ -315,8 +318,9 @@ padding: 4px;
   .event {
     display: inline-block;
     width: 90%;
-    margin-right: 10px;
+    margin:auto;
     scroll-snap-align: center;
+    border:1px solid red;
   }
   /* event details css */
   .eventdetailscon {

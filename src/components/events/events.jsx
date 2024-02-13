@@ -105,7 +105,7 @@ const filterEventsFunc  = (category)=>{
           </div>
         </div>
       </div>
-      {eventsData.length === 0 && <div className="nodata">
+      {eventsData.length === 0 && !isLoading && <div className="nodata">
         No Events Yet... Check again Later or Add your own Event
       </div> }
 {isLoading && !error &&  <div className="loadingdatabox">
