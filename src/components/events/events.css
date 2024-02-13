@@ -307,7 +307,6 @@ margin-left: 10px;
     overflow-x: scroll;
     padding: 10px;
     scroll-snap-type: x mandatory;
-  
   }
 
   .nodata {
