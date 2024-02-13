@@ -1,0 +1,188 @@
+.dash-container {
+  margin-top: 50px;
+  display: flex;
+  color:#333333;
+}
+.dash-container h3 {
+  text-align: center;
+}
+.dashlinks {
+  width: 20%;
+  min-height: 89vh;
+ background-color: #fff;
+  padding: 4px;
+  transition: 0.3s ease all;
+  border-right:2px solid #fff ;
+}
+
+.dashcontent {
+  width: 100%;
+  background-color:#eaeaea;
+  color: #333333;
+  padding: 4px;
+}
+.dashlink {
+  font-size: 18px;
+  background-color: #fff;
+  margin: 30px 0;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.dashlink:hover {
+  color: #fff;
+  background-color: #333333;
+}
+.dashlinks h3 {
+  text-transform: capitalize;
+  color: #333333;
+}
+.arrow{display: none}
+
+.delete-account-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.delete-account-text p {
+  background-color: #ffffff;
+  font-size: 20px;
+  width: 60%;
+  margin: auto;
+  margin-top: 150px;
+  padding: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 6px;
+}
+.delete-account {
+  background-color: #eb4b4b;
+  color: #fff;
+}
+.delete-account:hover {
+  background-color: red;
+}
+.usereventscontainer {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 8px;
+}
+.user-event {
+  min-width: 30%;
+  background-color: #ffffff;
+  text-transform: capitalize;
+  font-size: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.user-event:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 2px #7e7e7e;
+}
+.usereventimage {
+  /* border: 1px solid #00848c; */
+  width: 100%;
+  height: 150px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+}
+
+.usereventimage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.delete-event {
+  width: 90%;
+  margin: 4px auto;
+}
+
+.delete-event button {
+  width: 100%;
+  background-color: #eb4b4b;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.delete-event button:hover {
+  background-color: red;
+}
+
+
+@media (max-width: 768px) {
+  .mobilenav{
+    display: flex;
+    display: none;
+  }
+  .dash-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 8px;
+  
+  }
+  .dashlinks {
+    width:100%;
+    min-height: fit-content;
+    display: block;
+    gap: 10px;
+  }
+  .dashlinks h3 {
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    z-index: 0;
+    padding: 4px;
+    }
+  .dashlink {
+    font-size: 18px;
+    background-color: #fff;
+    display: flex;
+    margin-top: 4px;
+    gap: 10px;
+    justify-content: left;
+    align-items: center;
+  }
+  .delete-account {
+    background-color: #eb4b4b;
+    color: #fff;
+  }
+  .delete-account:hover {
+    background-color: red;
+  }
+  .user-event {
+    width: 90%;
+    background-color: #ffffff;
+    text-transform: capitalize;
+    font-size: 12px;
+    border-radius: 8px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-right: 20px;
+    scroll-snap-align: center;
+  }
+
+  .usereventscontainer{
+    display: block;
+    max-width: 100vw;
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+  }
+  .arrow{
+    display: block;
+  }
+}

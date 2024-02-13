@@ -1,0 +1,54 @@
+/* css for banner */
+.banner {
+  margin-top: 40px;
+  /* border: 2px solid red; */
+  height: 50vh;
+  background-image: url('../../assets/subtle-prism-blue.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.intro {
+  /* border: 2px solid rgb(0, 0, 0); */
+  padding: 10px;
+  width: 50%;
+  height: fit-content;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.event-listings {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  font-size: 26px;
+  width: 200px;
+  text-align: center;
+  color: #ffffff;
+  padding: 4px;
+}
+@media (max-width: 768px) {
+  .banner {
+    margin-top: 30px;
+    flex-direction: column;
+  }
+  .intro {
+    /* border: 2px solid rgb(0, 0, 0); */
+    padding: 10px;
+    width: 90%;
+  }
+  .event-listings {
+    border-bottom: 2px solid #fff;
+  }
+}
+@media (max-height: 700px) {
+  .banner {
+    margin-top: 40px;
+    height: 70vh;
+  }
+}
