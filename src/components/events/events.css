@@ -307,7 +307,7 @@ margin-left: 10px;
     overflow-x: scroll;
     padding: 10px;
     scroll-snap-type: x mandatory;
-    border:1px solid blue;
+  
   }
 
   .nodata {
@@ -320,7 +320,7 @@ padding: 4px;
     width: 90%;
     margin:auto;
     scroll-snap-align: center;
-    border:1px solid red;
+   
   }
   /* event details css */
   .eventdetailscon {
