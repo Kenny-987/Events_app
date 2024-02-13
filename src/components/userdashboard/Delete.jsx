@@ -10,7 +10,7 @@ const Delete = () => {
     try {
       // Send DELETE request to the server to delete the account
       const response = await fetch(
-        `https://localhost:3000/auth/delaccount`,
+        `https://events-server-2d4h.onrender.com/auth/delaccount`,
         {
           method: "DELETE",
           headers: {

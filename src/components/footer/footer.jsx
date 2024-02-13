@@ -28,7 +28,7 @@ const Footer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    const api = "http://localhost:3000/mail/send-email";
+    const api = "https://events-server-2d4h.onrender.com/mail/send-email";
     try {
       const response = await fetch(api, {
         method: "POST",

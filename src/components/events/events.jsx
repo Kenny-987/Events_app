@@ -15,7 +15,7 @@ const Events = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showFilter,setShowFilter]=useState(false)
   const [error, setError] = useState(false);
-  const api = "http://localhost:3000/event/activities";
+  const api = "https://events-server-2d4h.onrender.com/event/activities";
 
   useEffect(() => {
     const getEvents = async () => {
