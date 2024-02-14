@@ -29,6 +29,9 @@ const AddEvent = () => {
     const author = user;
     e.preventDefault();
     setIsLoading(true);
+    if (date < new Date()){
+      return alert("please select a date from today onwards.")
+    }
     try {
       const formData = new FormData();
       formData.append("title", title);
@@ -223,6 +226,7 @@ const AddEvent = () => {
         <option value="health">Health</option>
         <option value="fundraising">Fundraising</option>
         <option value="food">Food</option>
+        <option value="party">Party/Festival</option>
         {/* Add more options as needed */}
       </select>
         </div>

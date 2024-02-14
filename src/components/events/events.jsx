@@ -80,6 +80,9 @@ const filterEventsFunc  = (category)=>{
         <div className="cat" onClick={(e)=>{
         filterEventsFunc(e.currentTarget.innerHTML.toLocaleLowerCase())
         }}>Food</div>
+        <div className="cat" onClick={(e)=>{
+        filterEventsFunc(e.currentTarget.innerHTML.toLocaleLowerCase())
+        }}>Parties / Festivals</div>
       </div>
       </section>
   
@@ -105,7 +108,7 @@ const filterEventsFunc  = (category)=>{
           </div>
         </div>
       </div>
-      {eventsData.length === 0 && !isLoading && <div className="nodata">
+      {eventsData.length === 0 && !isLoading && !error&& <div className="nodata">
         No Events Yet... Check again Later or Add your own Event
       </div> }
 {isLoading && !error &&  <div className="loadingdatabox">

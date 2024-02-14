@@ -9,12 +9,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.css";
 import { useAuth } from "../../authContext";
-import { useEffect, useState } from "react";
-// import Theme from "./Theme";
+import logo from '../../assets/logo.jpg'
+import { useState } from "react";
 const Navbar = () => {
   const [verifiedUser, setVerifiedUser] = useState(false);
   const { data } = useAuth();
-  const [displayMsg, SetDisplayMsg] = useState(false);
   const { user, token } = data;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -33,7 +32,9 @@ const Navbar = () => {
   };
   return (
     <header className="navbar">
-      <div className="logo">EventFlow</div>
+      <div className="logo">
+        <img src={logo} alt="" />
+      </div>
       <div
         className='menu-icon'
         onClick={toggleMobileMenu}
