@@ -1,8 +1,4 @@
-# React + Vite
+# Events sharing and posting website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application allows users to view and post local events. Currently designed to be used at a smaller scale andd is still a work in progress. More modifications to be made per user suggestions and input.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
