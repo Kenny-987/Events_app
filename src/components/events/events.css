@@ -297,17 +297,7 @@ margin-left: 10px;
 
 
 @media (max-width: 768px) {
-  .events {
-  margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    max-width: 100vw;
-    white-space: nowrap;
-    overflow-x: scroll;
-    padding: 10px;
-    scroll-snap-type: x mandatory;
-}
+ 
   .events-container {
     margin-top: 20px;
     display: flex;
