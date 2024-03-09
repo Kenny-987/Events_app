@@ -301,13 +301,13 @@ margin-left: 10px;
   .events-container {
     margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     gap: 10px;
     max-width: 100%;
     white-space: nowrap;
-    overflow-x: scroll;
+    overflow-x: auto; /* Changed to auto for horizontal scrolling */
     padding: 10px;
-    scroll-snap-type: x mandatory;
+    flex-wrap: nowrap; /* Added to prevent wrapping and enable horizontal scrolling */
   }
 
   .nodata {
