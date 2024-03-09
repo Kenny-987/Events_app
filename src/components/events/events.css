@@ -303,7 +303,7 @@ margin-left: 10px;
     display: flex;
     justify-content: flex-start;
     gap: 10px;
-    max-width: 100%;
+    max-width: 100vw;
     white-space: nowrap;
     overflow-x: auto; /* Changed to auto for horizontal scrolling */
     padding: 10px;
