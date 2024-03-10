@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../authContext";
 
 const MyEvents = () => {
+  
   const api = "https://events-server-2d4h.onrender.com/event/myposts";
   const [userEventsData, setUserEventsData] = useState([]);
   const handleDeleteEvent = (eventId) => {
@@ -14,6 +15,7 @@ const MyEvents = () => {
   const [isLoading, setIsLoading] = useState(true);
   const userInfo = JSON.parse(sessionStorage.getItem("userData"));
   const { token } = userInfo;
+
 
   useEffect(() => {
     const getEvents = async () => {

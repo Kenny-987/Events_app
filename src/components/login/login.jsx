@@ -29,6 +29,7 @@ const Login = () => {
   }
     e.preventDefault();
     setIsLoading(true);
+    
     const api = "https://events-server-2d4h.onrender.com/auth/login";
     try {
       const response = await fetch(api, {
@@ -122,7 +123,7 @@ const Login = () => {
             }}
           />
           {invalidPassword && (
-            <p className="invalid">invalid password, try again</p>
+            <p className="invalid">invalid password, or username</p>
           )}
         </div>
         <div className="button">

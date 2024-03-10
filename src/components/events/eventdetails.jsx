@@ -23,6 +23,11 @@ const EventDetails = () => {
   const inputDate = new Date(date);
   const options = { day: "2-digit", month: "2-digit", year: "numeric" };
   const formattedDate = inputDate.toLocaleDateString("en-GB", options);
+
+  const toMaps=()=>{
+const mapsUrl=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`
+window.open(mapsUrl,"_blank")
+  }
   return (
   
       <div className="event-details" >
@@ -46,8 +51,8 @@ const EventDetails = () => {
             <div className="details-info">
               <p>Event Title:</p> <p>{title}</p>
             </div>
-            <div className="details-info">
-              <p>Location:</p> <p>{location}</p>
+            <div className="details-info location" onClick={toMaps}>
+              <p>Location: <small>click to show on map</small></p> <p>{location}</p>
             </div>
             <div className="details-info">
               <p>Date:</p>
@@ -66,10 +71,10 @@ const EventDetails = () => {
         </div>
         <div className="aboutevent">
           <h3>About This Event</h3>
-          {description == "" ? <p>No details about the event</p>: <p>{description}</p>}
+          {description == "" ? <p>No extra details about this event</p>: <p>{description}</p>}
           <h3>Contacts</h3>
-          <p>Email {email ? <span>{email}</span>: <span>No Email</span>}</p>
-          <p>Phone {phone ? <span>{phone}</span>: <span>No Phone Details</span>}</p>
+          <p>Email :{email ? <span>{email}</span>: <span>No Email</span>}</p>
+          <p>Phone :{phone ? <span>{phone}</span>: <span>No Phone Details</span>}</p>
           <div className="socialmedia">
 
           </div>

@@ -25,14 +25,14 @@ const AddEvent = () => {
   const handleSubmit = async (e) => {
 
     console.log("request sent")
-    const api = "https://events-server-2d4h.onrender.com/event/create";
+     const api = "https://events-server-2d4h.onrender.com/event/create";
     const author = user;
     e.preventDefault();
     setIsLoading(true);
     if (date < new Date()){
       return alert("please select a date from today onwards.")
     }
-    try {
+    try {5
       const formData = new FormData();
       formData.append("title", title);
       formData.append("location", location);
@@ -127,6 +127,7 @@ const AddEvent = () => {
             onChange={(e) => {
               setDate(e.target.value);
             }}
+            min = {new Date().toISOString().split("T")[0]}
           />
         </div>
         <div className="form-input">
