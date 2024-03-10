@@ -6,6 +6,7 @@ import Layout from "./Layout";
 import AddEvent from "./components/events/addevent";
 import Dashboard from "./components/userdashboard/dashboard";
 import About from "./components/footer/about";
+import Policy from "./components/login/Policy";
 import "./index.css";
 import EventDetails from "./components/events/eventdetails";
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/policy" element={<Policy />} />
           <Route path="/addevent" element={<AddEvent />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
