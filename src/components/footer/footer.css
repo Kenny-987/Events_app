@@ -145,6 +145,9 @@ label {
   margin-top: 20px;
   text-align: center;
 }
+.footer-policy{
+  font-weight: 600;
+}
 @media (max-width: 768px) {
   .footer {
     flex-wrap: wrap;

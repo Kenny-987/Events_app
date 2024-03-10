@@ -136,12 +136,22 @@ const Login = () => {
             </button>
           )}
         </div>
+
+        <div className="policy">
+         By Logging you confirm that you agree to our <span onClick={()=>{
+          navigate("/policy")
+         }}>Privacy Policy</span> and <span onClick={()=>{
+          navigate("/policy")
+         }}>Terms of Use</span>
+         
+        </div>
         <div className="signup">
           No Account yet?{" "}
           <Link to="/signup" className="nav-link signingup">
             SignUp
           </Link>
         </div>
+      
       </form>
       {islogged && <div className="done">Login Successful</div>}
     </>

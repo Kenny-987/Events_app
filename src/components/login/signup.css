@@ -137,6 +137,7 @@
   mask-composite: subtract;
   animation: l3 1s infinite linear;
 }
+
 @keyframes l3 {
   to {
     transform: rotate(1turn);
@@ -152,6 +153,36 @@
   margin: auto;
   color: #ff0000;
   text-transform: capitalize;
+}
+.policy{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 12px;
+}
+.policy span{
+  color: #1c74f7;
+  font-weight: 600;
+  cursor: pointer;
+}
+.policy-container{
+  width: 60%;
+  margin: auto;
+  margin-top: 60px;
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 50px;
+}
+.policy-container h3{
+  margin-top: 20px;
+}
+.policy-container h4{
+  margin-top: 10px;
+}
+.policy-container p span{
+  font-weight: 600;
 }
 @media (max-width: 768px) {
   .form {
@@ -177,6 +208,10 @@
     width: 96%;
     margin: auto;
   }
+  .policy-container{
+    width: 96%;
+    padding: 20px;
+  }
 }
 @media (max-height: 600px) {
   .form {
@@ -197,5 +232,8 @@
   .btn {
     width: 100%;
     font-size: 20px;
+  }
+  .policy-container{
+    width: 96%;
   }
 }

@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./footer.css";
 const Footer = () => {
+  const navigate = useNavigate()
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -70,6 +71,16 @@ const Footer = () => {
         <p>
           <FontAwesomeIcon icon={faEnvelope} /> kennethmadondo01@gmail.com
         </p>
+        <div className="footer-policy">
+        <p onClick={()=>{
+          navigate("/policy")
+         }}>Privacy Policy</p>
+         {" "}
+         <p onClick={()=>{
+          navigate("/policy")
+         }}>Terms of Use</p>
+         
+        </div>
       </div>
       <div className="footer-item about">
         {" "}
@@ -86,6 +97,7 @@ const Footer = () => {
           <FontAwesomeIcon icon={faEdit} /> Feedback
         </h4>
       </div>
+
       {isFeedbackOpen && (
         <div className="modal">
           <div className="modal-content">
