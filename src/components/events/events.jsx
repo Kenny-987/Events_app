@@ -15,8 +15,10 @@ const Events = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showFilter,setShowFilter]=useState(false)
   const [error, setError] = useState(false);
-  const api = "https://events-server-2d4h.onrender.com/event/activities";
-
+  // development api 
+  // const api = "https://events-server-2d4h.onrender.com/event/activities";
+  //local development api
+  const api = "http://localhost:3000/event/activities";
   useEffect(() => {
     const getEvents = async () => {
       try {
@@ -88,11 +90,11 @@ const filterEventsFunc  = (category)=>{
   
       <div className="heading">
         <h3>Upcoming Events </h3>
-        <div className="sorting">
+        {/* <div className="sorting">
           <div className="sort-box ">
               <p onClick={()=>{
                 setShowFilter(!showFilter)
-              }}>Sort By <span> <FontAwesomeIcon className="icon" icon={faArrowDown} /></span></p>
+              }}>Sort By <span> <FontAwesomeIcon  icon={faArrowDown} /></span></p>
               {showFilter && 
               <div className="filter">
               <button>
@@ -102,11 +104,8 @@ const filterEventsFunc  = (category)=>{
               Price
            </button>
               </div> }
-        
-           
-          
           </div>
-        </div>
+        </div> */}
       </div>
       {eventsData.length === 0 && !isLoading && !error&& <div className="nodata">
         No Events Yet... Check again Later or Add your own Event
@@ -117,7 +116,7 @@ const filterEventsFunc  = (category)=>{
       {error == true && !isLoading  ? (
         <div className="apiError">Server Error, try reloading page</div>
       ) : (
-        <Event data={filteredEvent} loading={isLoading} length={eventsData} />
+        <Event eventdata={filteredEvent} loading={isLoading} length={eventsData} />
       )}
     </section>
   );

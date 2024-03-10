@@ -18,7 +18,7 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
   const handleDelete = async(_id) => {
     // Send DELETE request to the server to delete the event
     try{
-      const response = await fetch(`https://events-server-2d4h.onrender.com/event/delete/${_id}`, {
+      const response = await fetch(`http://localhost:3000/event/delete/${_id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -29,6 +29,7 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
             // If the request was successful, call the onDelete callback to update the UI
             // onDelete(_id);
             handleDeleteEvent(_id);
+            console.log("event deleted")
           } else {
             throw new Error("Event deletion failed");
           }
@@ -42,6 +43,10 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
 
   return (
     <div className="usereventscontainer">
+
+{/* edit event modal */}
+
+
       {userData.length > 0 ? (
         userData.map((post) => {
           const { title, location, _id, author, imagePath, date } = post;
@@ -77,8 +82,8 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
                   <p>{location}</p>
                 </div>
               </div>
-              <div className="delete-event">
-                <button
+              <div className="edit">
+                <button className="delete-event"
                   onClick={() => {
                     handleDelete(_id);
                     handleDeleteEvent(_id);
@@ -86,12 +91,15 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
                 >
                   delete
                 </button>
+                {/* <button className="edit-event">
+                  edit
+                </button> */}
               </div>
             </div>
           );
         })
       ) : (
-        <div className="loading-message">Loading events...</div>
+        <div className="nodata">You Haven't Added Any Events Yet</div>
       )}
     </div>
   );

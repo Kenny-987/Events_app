@@ -15,7 +15,7 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    const api = "https://events-server-2d4h.onrender.com/auth/register";
+    const api = "http://localhost:3000/auth/register";
     e.preventDefault();
     setIsLoading(true);
     // Validate password and confirm password

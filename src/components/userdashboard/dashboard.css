@@ -79,10 +79,11 @@
   border-radius: 8px;
   margin-bottom: 20px;
   padding-bottom: 10px;
+  box-shadow: 0px 0px 10px 2px #7e7e7e;
 }
 .user-event:hover {
   cursor: pointer;
-  box-shadow: 0px 0px 10px 2px #7e7e7e;
+  box-shadow: 0px 0px 10px 2px #333;
 }
 .usereventimage {
   /* border: 1px solid #00848c; */
@@ -98,14 +99,17 @@
   object-fit: cover;
   border-radius: 8px;
 }
-.delete-event {
+.edit {
   width: 90%;
   margin: 4px auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-.delete-event button {
-  width: 100%;
+.delete-event {
   background-color: #eb4b4b;
+  width: 50%;
   border: none;
   border-radius: 4px;
   color: #fff;
@@ -114,10 +118,38 @@
   font-size: 16px;
   text-transform: capitalize;
 }
-.delete-event button:hover {
+.delete-event:hover {
   background-color: red;
 }
+.edit-event{
+  background-color: #1c74f7;
+  width: 50%;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: capitalize;
+}
 
+.edit-event:hover {
+  background-color: #1900ff;
+}
+
+/* ----------------------------------------------------------
+-----------------------Liked events css ---------------------
+-------------------------------------------------------------
+-------------------------------------------------------------*/
+
+.liked-events-container{
+  border: 1px solid red;
+  width: 100%;
+}
+.liked-event{
+  border:1px solid black;
+  width: 40%;
+}
 
 @media (max-width: 768px) {
   .mobilenav{
