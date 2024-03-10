@@ -66,7 +66,7 @@ if(length.length===0){
 
   return (
     <div className="events-container">
-      {eventdata.filter(singleEvent=> new Date(singleEvent.date)>= new Date()).map((singleEvent) => {
+      {eventdata.map((singleEvent) => {
         const {
           title,
           location,
