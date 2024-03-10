@@ -25,10 +25,7 @@ const AddEvent = () => {
   const handleSubmit = async (e) => {
 
     console.log("request sent")
-    //development api
-    // const api = "https://events-server-2d4h.onrender.com/event/create";
-    //local api
-    const api = "http://localhost:3000/event/create";
+     const api = "https://events-server-2d4h.onrender.com/event/create";
     const author = user;
     e.preventDefault();
     setIsLoading(true);
