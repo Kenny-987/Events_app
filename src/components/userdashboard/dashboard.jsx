@@ -4,13 +4,15 @@ import { useState, useEffect } from "react";
 import MyEvents from "./MyEvents";
 import Logout from "./Logout"
 import Delete from "./Delete";
+import Liked from "./Liked"
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSitemap,
   faSignOut,
   faWarning,
-  faArrowDown
+  faArrowDown,
+  faHeart
 } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../authContext";
 
@@ -46,12 +48,23 @@ const Dashboard = () => {
         < FontAwesomeIcon icon={faArrowDown} className="arrow"/>
         </div></h3> 
         <div className={showNav ? "": "mobilenav"}  >
+        {/* Link */}
         <div className="dashlink" onClick={()=>{
  showComponent("events")
  setShowNav(!showNav)
         }}>
           <FontAwesomeIcon icon={faSitemap} /> My Events
         </div>
+        {/* Link */}
+{/* 
+          <div className="dashlink" onClick={()=>{
+            showComponent("liked")
+            setShowNav(!showNav)
+                   }}>
+                     <FontAwesomeIcon icon={faHeart} /> Liked Events
+                   </div> */}
+                   {/* Link */}
+
         <div className="dashlink" onClick={()=>{
           showComponent("logout")
           setShowNav(!showNav)
@@ -73,6 +86,7 @@ const Dashboard = () => {
       <div className="dashcontent">
         {selectLink === null && <MyEvents />}
         {selectLink === "events" && <MyEvents />}
+        {/* {selectLink === "liked" && <Liked />} */}
         {selectLink === "logout" && <Logout signOut={signOut} />}
         {selectLink === "delete" && <Delete />}
       </div>

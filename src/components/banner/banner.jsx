@@ -15,17 +15,17 @@ const Banner = () => {
       // Increment the index to get the next text from the array
       const nextIndex = (currentTextIndex + 1) % textArray.length;
       setCurrentTextIndex(nextIndex);
-    }, 3000); 
+    }, 1500); 
 
     return () => clearTimeout(timeoutId);
   }, [currentTextIndex, textArray.length]);
 
   return (
     <div className="banner">
-      <div className="intro">
-        <h3>
-          Stay in the loop with our Local Events Website. Discover concerts, festivals, workshop, and more happening in Bulawayo. With a user friendly interface and filters, you'll never miss out on the latest happenings.
-        </h3>
+      <div className="intro"> 
+        <h2>
+        Stay in the loop with our Local Events Website. Discover concerts, festivals, workshop, and more happening in Bulawayo. With a user friendly interface and filters, you'll never miss out on the latest happenings.
+        </h2>
       </div>
       <div className="event-listings">
         <h4 className="text-containeer">

@@ -73,7 +73,7 @@ const Footer = () => {
       </div>
       <div className="footer-item about">
         {" "}
-        <a href="#">Developed by Kenneth Madondo</a>
+        <a href="#">Designed and Developed by Kenneth Madondo</a>
       </div>
       <div className="footer-item feedback">
         <p>

@@ -48,9 +48,11 @@ const Navbar = () => {
             setMobileMenuOpen(false);
           }}
         >
-          <Link to="/" className="nav-link">
+          <p  className="nav-link" onClick={()=>{
+            navigate("/")
+          }}>
           <FontAwesomeIcon icon={faHome} /> Home 
-          </Link>
+          </p>
         </div>
         <div className="link linktoevent" onClick={toAddEventPage}>
         <FontAwesomeIcon icon={faPlusCircle} /> Add Event 
@@ -68,10 +70,12 @@ const Navbar = () => {
             </Link>
           ) : (
             <p className="account-username">
-              <FontAwesomeIcon icon={faUser} />{" "}
-              <Link to="/dashboard" className="nav-link">
+              
+              <p to="/dashboard" className="nav-link" onClick={()=>{
+                navigate("/dashboard")
+              }}><FontAwesomeIcon icon={faUser} />{" "}
                 {user}
-              </Link>
+              </p>
               
             </p>
           )}
