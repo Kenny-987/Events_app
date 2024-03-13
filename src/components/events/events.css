@@ -335,6 +335,10 @@ margin-left: 10px;
   margin-bottom: 100px;
   overflow-wrap: break-word;
 }
+textarea {
+    white-space: pre-wrap;
+}
+
 .aboutevent p{
   font-size: 18px;
   margin-top: 10px;
