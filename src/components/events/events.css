@@ -342,6 +342,7 @@ textarea {
 .aboutevent p{
   font-size: 18px;
   margin-top: 10px;
+  white-space: pre-line;
 }
 .aboutevent span{
   font-weight: 600;
