@@ -33,6 +33,7 @@ const Reset = () => {
           if (response.ok) {
          
               setIsLoading(false);
+              navigate("/login")
               console.log("password changed")
           } else{
             setIsLoading(false);
