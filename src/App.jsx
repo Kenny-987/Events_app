@@ -1,6 +1,6 @@
 import SignUp from "./components/login/signup";
 import Home from "./components/home";
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/login/login";
 import Layout from "./Layout";
 import AddEvent from "./components/events/addevent";
@@ -12,7 +12,7 @@ import "./index.css";
 import EventDetails from "./components/events/eventdetails";
 function App() {
   return (
-    <>
+    <HashRouter>
       <Routes>
         <Route  element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -26,7 +26,7 @@ function App() {
           <Route path="/eventdetails" element={<EventDetails />} />
         </Route>
       </Routes>
-    </>
+      </HashRouter>
   );
 }
 
