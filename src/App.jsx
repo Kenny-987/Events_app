@@ -1,6 +1,6 @@
 import SignUp from "./components/login/signup";
 import Home from "./components/home";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login/login";
 import Layout from "./Layout";
 import AddEvent from "./components/events/addevent";
@@ -13,8 +13,9 @@ import EventDetails from "./components/events/eventdetails";
 function App() {
   return (
     <>
-      <Routes>
-        <Route  element={<Layout />}>
+       <Router>
+      <Layout>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
@@ -24,8 +25,9 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/eventdetails" element={<EventDetails />} />
-        </Route>
-      </Routes>
+        </Routes>
+      </Layout>
+    </Router>
     </>
   );
 }
