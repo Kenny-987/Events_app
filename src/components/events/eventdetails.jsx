@@ -20,6 +20,7 @@ const EventDetails = () => {
     phone,
     email
   } = singleEvent;
+  console.log(phone,email)
   const inputDate = new Date(date);
   const options = { day: "2-digit", month: "2-digit", year: "numeric" };
   const formattedDate = inputDate.toLocaleDateString("en-GB", options);
