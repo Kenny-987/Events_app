@@ -139,7 +139,7 @@ const Login = () => {
         </div>
 
         <div className="policy">
-         By Logging you confirm that you agree to our <span onClick={()=>{
+         By Logging in you confirm that you agree to our <span onClick={()=>{
           navigate("/policy")
          }}>Privacy Policy</span> and <span onClick={()=>{
           navigate("/policy")
@@ -150,6 +150,11 @@ const Login = () => {
           No Account yet?{" "}
           <Link to="/signup" className="nav-link signingup">
             SignUp
+          </Link>
+        </div>
+        <div className="signup">
+          <Link to="/forgotpassword" className="pass-link">
+            Forgot password?
           </Link>
         </div>
       

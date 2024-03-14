@@ -105,7 +105,7 @@ const SignUp = () => {
         </div>
         <div className="form-input">
           <label htmlFor="email" className="label">
-            Email
+            Email <small>(Used for account recovery and notifications)</small>
           </label>
           <input
             type="email"
