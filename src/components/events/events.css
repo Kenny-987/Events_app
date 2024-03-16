@@ -295,8 +295,8 @@ margin-left: 10px;
 }
 .details-image img {
   width: 100%;
-  /* height: auto; */
-  object-fit: contain;
+  height: auto;
+  object-fit: cover;
   border-radius: 8px;
 }
 .more-details {
