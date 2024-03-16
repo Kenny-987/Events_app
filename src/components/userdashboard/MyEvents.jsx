@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../authContext";
 
 const MyEvents = () => {
-  
-  const api = "https://events-server-2d4h.onrender.com/event/myposts";
+  //development api dont forget to use it before you commit canhed
+ const api = "https://events-server-2d4h.onrender.com/event/myposts";
+ //const api = "http://localhost:3000/event/myposts"
   const [userEventsData, setUserEventsData] = useState([]);
   const handleDeleteEvent = (eventId) => {
     setUserEventsData((prevEvents) =>

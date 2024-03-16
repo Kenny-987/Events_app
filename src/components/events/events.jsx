@@ -1,23 +1,44 @@
 import Event from "./event";
+import { Link, useNavigate } from "react-router-dom";
+
 import "./events.css";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../authContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faArrowDown
+  faPlusCircle,
+  faClose
 } from "@fortawesome/free-solid-svg-icons";
+
 
 
 const Events = () => {
   const [eventsData, setEventsData] = useState([]);
   const[filteredEvent,setFilteredEvent]=useState([])
+  const [verifiedUser, setVerifiedUser] = useState(false);
   const { eventsInfo } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
   const [showFilter,setShowFilter]=useState(false)
   const [error, setError] = useState(false);
-  // development api 
-  const api = "https://events-server-2d4h.onrender.com/event/activities";
+  const { data } = useAuth();
+  const { token } = data;
+  const navigate = useNavigate();
 
+
+
+  
+  const toAddEventPage = () => {
+    if (!token) {
+      setVerifiedUser(true);
+    } else {
+      navigate("/addevent");
+    }
+  };
+
+  // production api dont forget to uncomment before commiting
+  const api = "https://events-server-2d4h.onrender.com/event/activities";
+//testing api 
+// const api = "http://localhost:3000/event/activities"
   useEffect(() => {
     const getEvents = async () => {
       try {
@@ -117,6 +138,24 @@ const filterEventsFunc  = (category)=>{
       ) : (
         <Event eventdata={filteredEvent} loading={isLoading} length={eventsData} />
       )}
+      <div className="addeventbtn">
+        <button onClick={toAddEventPage}>Add Your Own Events <FontAwesomeIcon icon={faPlusCircle} /></button>
+        {verifiedUser && (
+        <div className="noauth">
+          <p> <span onClick={()=>{
+            navigate('/login')
+        setVerifiedUser(false)
+        }}>Login</span> to Add an Event</p>
+          <FontAwesomeIcon
+            icon={faClose}
+            className="closenoauth"
+            onClick={() => {
+              setVerifiedUser(!verifiedUser);
+            }}
+          />
+        </div>
+      )}
+      </div>
     </section>
   );
 };

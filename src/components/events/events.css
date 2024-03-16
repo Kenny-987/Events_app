@@ -89,7 +89,7 @@ margin-top: 4px;
 
 .event {
   /* border: 1px solid blue; */
-  min-width: 20%;
+  width: 20%;
   color: #333333;
   background-color: #ffffff;
   text-transform: capitalize;
@@ -359,7 +359,48 @@ textarea {
   width: 94%;
   margin: auto;
 }
-
+.addeventbtn{
+  /* border: 1px solid red; */
+width: fit-content;
+margin: auto;
+margin-top: 50px;
+}
+.addeventbtn button{
+  display: block;
+  font-size: 20px;
+  background-color: #1c74f7;
+  color: #fff;
+  border: 1px solid #727272;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 1px #727272;
+  cursor: pointer;
+}
+.addeventbtn button:hover{
+  background-color: #1c74f7;
+  color: #fff;
+}
+.noauth{
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #333;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 6px;
+  font-size: 18px;
+  border-radius: 4px;
+}
+.noauth p span{
+  color: #1c74f7;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.closenoauth{
+  color: red;
+  cursor: pointer;
+}
 
 @media (max-width: 768px) {
  

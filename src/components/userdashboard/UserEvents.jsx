@@ -1,16 +1,25 @@
 import React, { useState } from "react";
+import EditEvent from "./EditEvent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faLocationDot,
   faCalendarDays,
   faCloudSun,
+  faEdit,
+  faTrash,
+  faClose
 } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../authContext";
 
 const UserEvents = ({ userData, handleDeleteEvent }) => {
   const { data } = useAuth();
-  const [option,setOption] = useState(false)
+  //const [option,setOption] = useState(false)
   const { token } = data;
+const [showDelete,setShowDelete] = useState(null)
+const [showEditForm,setShowEditForm]= useState(false)
+const [editEvent,setEditEvent]= useState(null)
+
   if (userData.length === 0) {
     return <div className="nodata">You Haven't Added Any Events Yet</div>;
   }
@@ -18,8 +27,8 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
   const handleDelete = async(_id) => {
     // Send DELETE request to the server to delete the event
     try{
-      
-      const response = await fetch(`https://events-server-2d4h.onrender.com/event/delete/${_id}`, {
+      //remeber to put back https://events-server-2d4h.onrender.com/event/delete/${_id}
+      const response = await fetch(`http://localhost:3000/event/delete/${_id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -30,6 +39,7 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
             // If the request was successful, call the onDelete callback to update the UI
             // onDelete(_id);
             handleDeleteEvent(_id);
+            setShowDelete(null)
             console.log("event deleted")
           } else {
             throw new Error("Event deletion failed");
@@ -41,12 +51,12 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
 
   };
 
-
+const handleEdit = (event)=>{
+setEditEvent(event)
+setShowEditForm(true)
+}
   return (
-    <div className="usereventscontainer">
-
-{/* edit event modal */}
-
+    <div className={`usereventscontainer ${showEditForm ? "noscroll":""}`}>
 
       {userData.length > 0 ? (
         userData.map((post) => {
@@ -84,17 +94,36 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
                 </div>
               </div>
               <div className="edit">
+                {/* delete icon */}
                 <button className="delete-event"
-                  onClick={() => {
+                onClick={()=>{
+                  setShowDelete(_id)
+                }}
+                >
+                  <p>
+                    <FontAwesomeIcon className="icon" icon={faTrash} />
+                  </p>
+                </button>
+                  {/* delete icon */}
+                  {/* edit icon */}
+                <button className="edit-event" onClick={()=>{handleEdit(post)}}>
+                <FontAwesomeIcon className="icon" icon={faEdit} />
+                </button>
+                 {/* edit icon */}
+
+                {/* confirm delete modal*/}
+                { showDelete ===_id &&   <div className="confirmDelete">
+                  Proceed to delete the event
+                  <div className="deleteOptions">
+                    <button   onClick={() => {
                     handleDelete(_id);
                     handleDeleteEvent(_id);
-                  }}
-                >
-                  delete
-                </button>
-                {/* <button className="edit-event">
-                  edit
-                </button> */}
+                  }}>Yes</button>
+                    <button onClick={()=>{setShowDelete(null)}}>Cancel</button>
+                  </div>
+                </div>}
+              {/* confirm delete modal*/}
+             
               </div>
             </div>
           );
@@ -102,8 +131,16 @@ const UserEvents = ({ userData, handleDeleteEvent }) => {
       ) : (
         <div className="nodata">You Haven't Added Any Events Yet</div>
       )}
+
+
+      {showEditForm && <EditEvent event={editEvent} setShowEditForm={setShowEditForm}/>}
     </div>
+    
   );
 };
+
+
+
+
 
 export default UserEvents;

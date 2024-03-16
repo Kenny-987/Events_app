@@ -69,7 +69,7 @@ const Footer = () => {
           <FontAwesomeIcon icon={faPhone} /> +263789644097
         </p>
         <p>
-          <FontAwesomeIcon icon={faEnvelope} /> kennethmadondo01@gmail.com
+          <FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:eventflowzw@gmail.com">eventflowzw@gmail.com</a>
         </p>
         <div className="footer-policy">
         <p onClick={()=>{
@@ -84,7 +84,8 @@ const Footer = () => {
       </div>
       <div className="footer-item about">
         {" "}
-        <a href="#">Designed and Developed by Kenneth Madondo</a>
+        Designed and Developed by  <a href="https://kennethmadondo.netlify.app" target="_blank">Kenneth Madondo</a>{' '}
+        in association with <a href="https://www.linkedin.com/in/isheanesu-chifamba-366244198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Isheanesu Chifamba</a>
       </div>
       <div className="footer-item feedback">
         <p>

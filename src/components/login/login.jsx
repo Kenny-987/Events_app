@@ -29,8 +29,10 @@ const Login = () => {
   }
     e.preventDefault();
     setIsLoading(true);
-    
-    const api = "https://events-server-2d4h.onrender.com/auth/login";
+    //production api dont forget to uncomment before commit
+   const api = "https://events-server-2d4h.onrender.com/auth/login";
+   //testing api
+   //const api = "http://localhost:3000/auth/login"
     try {
       const response = await fetch(api, {
         method: "POST",
@@ -44,7 +46,6 @@ const Login = () => {
         const dataToStore = JSON.stringify(data);
         const { user, token } = data;
 
-        console.log(dataToStore);
         sessionStorage.setItem("userData", dataToStore); //storing data in session storage
         setIslogged(true);
 

@@ -24,15 +24,16 @@ const AddEvent = () => {
   //code to submit data
   const handleSubmit = async (e) => {
 
-    console.log("request sent")
+    //production api
      const api = "https://events-server-2d4h.onrender.com/event/create";
+    //  const api = "https://localhost:3000/event/create"
     const author = user;
     e.preventDefault();
     setIsLoading(true);
     if (date < new Date()){
       return alert("please select a date from today onwards.")
     }
-    try {5
+    try {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("location", location);

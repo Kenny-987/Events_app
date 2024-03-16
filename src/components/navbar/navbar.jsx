@@ -6,6 +6,7 @@ import {
   faClose,
   faHome,
   faBars,
+  faCircleInfo
 } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.css";
 import { useAuth } from "../../authContext";
@@ -33,7 +34,10 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="logo">
+      <Link to="/" >
         <img src={logo} alt="" />
+         </Link>
+
       </div>
       <div
         className='menu-icon'
@@ -53,9 +57,23 @@ const Navbar = () => {
           }}>
           <FontAwesomeIcon icon={faHome} /> Home 
           </p>
+          
         </div>
         <div className="link linktoevent" onClick={toAddEventPage}>
         <FontAwesomeIcon icon={faPlusCircle} /> Add Event 
+        </div>
+        <div
+          className="link parent"
+          onClick={() => {
+            setMobileMenuOpen(false);
+          }}
+        >
+          <p  className="nav-link" onClick={()=>{
+            navigate("/about")
+          }}>
+          <FontAwesomeIcon icon={faCircleInfo} /> About
+          </p>
+          
         </div>
         {/* div to show login icon or  show use name when user logs in */}
         <div
