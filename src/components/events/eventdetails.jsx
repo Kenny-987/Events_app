@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router";
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
 
 const EventDetails = () => {
@@ -20,7 +21,7 @@ const EventDetails = () => {
     phone,
     email
   } = singleEvent;
-  console.log(phone,email)
+  // console.log(phone,email)
   const inputDate = new Date(date);
   const options = { day: "2-digit", month: "2-digit", year: "numeric" };
   const formattedDate = inputDate.toLocaleDateString("en-GB", options);
@@ -29,6 +30,10 @@ const EventDetails = () => {
 const mapsUrl=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`
 window.open(mapsUrl,"_blank")
   }
+
+  useEffect(()=>{
+    window.scroll(0,0)
+  },[navigate])
   return (
   
       <div className="event-details" >

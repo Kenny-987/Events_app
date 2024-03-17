@@ -83,9 +83,12 @@ const Navbar = () => {
           }}
         >
           {!token ? (
-            <Link to="/login" className="nav-link">
-            <FontAwesomeIcon icon={faUser} />  Login 
-            </Link>
+             <p  className="nav-link" onClick={()=>{
+              navigate("/login")
+            }}>
+            <FontAwesomeIcon icon={faUser} /> Login
+            </p>
+            
           ) : (
             <p className="account-username">
               

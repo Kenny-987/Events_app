@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,6 +9,9 @@ import { useNavigate } from "react-router";
 
 const About = () => {
 const navigate = useNavigate()
+useEffect(()=>{
+  window.scroll(0,0)
+},[navigate])
   return (
     <div className="about-page">
        <span className="close-modal" onClick={()=>{
