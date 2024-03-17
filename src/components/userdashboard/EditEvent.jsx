@@ -29,7 +29,7 @@ const handleSubmit= async(e)=>{
 e.preventDefault()
 setIsLoading(true)
 const updatedData = {
-    title, location, date, fee, category, email, phone
+    title, location, date, fee, description, category, email, phone
 }
 
 
