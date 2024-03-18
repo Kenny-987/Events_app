@@ -3,7 +3,7 @@
   margin-top: 40px;
   /* border: 2px solid red; */
   height: 50vh;
-  background-image: url('../../assets/subtle-prism-blue.svg');
+  background: linear-gradient(to right ,#000000a1,#000000a1),url('../../assets/6538969_1470.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

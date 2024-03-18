@@ -24,7 +24,7 @@ const Banner = () => {
     <div className="banner">
       <div className="intro"> 
         <h1>
-        Stay in the loop with our Local Events Website. Discover concerts, festivals, workshop, and more happening in Bulawayo. With a user friendly interface and filters, you'll never miss out on the latest happenings.
+         Discover concerts, festivals, workshops, and more happening in Bulawayo. With our local events website, you'll never miss out on the latest happenings.
         </h1>
       </div>
       <div className="event-listings">

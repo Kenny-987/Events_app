@@ -109,7 +109,7 @@ const filterEventsFunc  = (category)=>{
       </section>
   
       <div className="heading">
-        <h3>Upcoming Events </h3>
+        <h3>Upcoming Events: <span>{eventsData ? eventsData.length:"0"}</span> </h3>
         {/* <div className="sorting">
           <div className="sort-box ">
               <p onClick={()=>{
