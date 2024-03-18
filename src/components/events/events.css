@@ -45,11 +45,13 @@
   align-items: center;
   padding: 10px 20px;
   color: #333333;
-  /* border-bottom: 1px solid #1c74f7c4; */
+  background-color: #fff;
+  border-radius: 4px;
   width: 94%;
   margin: auto;
   margin-top: 50px;
 }
+
 .sort-box{
   width: 100px;
   background-color: #fff;

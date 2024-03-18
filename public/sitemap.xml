@@ -9,7 +9,7 @@
   
   <!-- Policy Page -->
   <url>
-    <loc>https://eventflow.co.zw/policy</loc>
+    <loc>https://eventflow.co.zw/login</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -90,7 +90,7 @@ const Navbar = () => {
             </p>
             
           ) : (
-            <p className="account-username">
+            <div className="account-username">
               
               <p to="/dashboard" className="nav-link" onClick={()=>{
                 navigate("/dashboard")
@@ -98,7 +98,7 @@ const Navbar = () => {
                 {user}
               </p>
               
-            </p>
+            </div>
           )}
         </div>
       </nav>
