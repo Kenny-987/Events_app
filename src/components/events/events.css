@@ -90,7 +90,6 @@ margin-top: 4px;
 }
 
 .event {
-  /* border: 1px solid blue; */
   width: 20%;
   color: #333333;
   background-color: #ffffff;
@@ -101,6 +100,7 @@ margin-top: 4px;
   margin-bottom: 20px;
   border: 1px solid #ffffff;
   position: relative;
+
 }
 .event:hover {
   cursor: pointer;
@@ -153,23 +153,33 @@ margin-top: 4px;
   color: #333333;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  /* border: 1px solid red; */
+  border-bottom: 1px solid #88888810;
 }
 .event-name{
   font-weight: 800;
   color: #333333;
 }
+
 .attr-wrapper :nth-child(2) {
-  /* border: 1px solid red; */
-  width: 60%;
+ 
+  /* width: 60%; */
   text-align: right;
   font-weight: 800;
   color: #333333;
+  overflow-wrap: break-word;
+  display: flex;
+ text-wrap: wrap; 
+
 }
 .attr-wrapper :nth-child(1) {
   display: flex;
   align-items: center;
   gap: 4px ;
 }
+
+
 .icon {
   width: 14px;
   display: block;
@@ -413,10 +423,11 @@ margin-top: 50px;
     gap: 10px;
     max-width: 100vw;
     white-space: nowrap;
-    overflow-x: auto; /* Changed to auto for horizontal scrolling */
+    overflow-x: auto; 
     padding: 10px;
-    flex-wrap: nowrap; /* Added to prevent wrapping and enable horizontal scrolling */
+    flex-wrap: nowrap; 
     scroll-snap-type: x mandatory;
+
   }
 
   .nodata {
@@ -429,6 +440,7 @@ padding: 4px;
     min-width: 90%;
     margin:auto;
     scroll-snap-align: center;
+    height: 100%;
    
   }
   /* event details css */
