@@ -79,9 +79,9 @@ if(length.length===0){
           imagePath,
         } = singleEvent;
         const inputDate = new Date(date);
-        if (inputDate < today) {
-          return null; 
-        }
+        // if (inputDate < today) {
+        //   return null; 
+        // }
         const options = { day: "2-digit", month: "2-digit", year: "numeric" };
         const formattedDate = inputDate.toLocaleDateString("en-GB", options);
         const isLiked = likedEvents.includes(_id);

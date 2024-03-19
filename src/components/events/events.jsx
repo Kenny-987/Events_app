@@ -104,12 +104,15 @@ const filterEventsFunc  = (category)=>{
         }}>Food</div>
         <div className="cat" onClick={(e)=>{
         filterEventsFunc(e.currentTarget.innerHTML.toLocaleLowerCase())
-        }}>Parties / Festivals</div>
+        }}>Party</div>
+        <div className="cat" onClick={(e)=>{
+        filterEventsFunc(e.currentTarget.innerHTML.toLocaleLowerCase())
+        }}>Festival</div>
       </div>
       </section>
   
       <div className="heading">
-        <h3>Upcoming Events: <span>{eventsData ? eventsData.length:"0"}</span> </h3>
+        <h3>Upcoming Events:  </h3>
         {/* <div className="sorting">
           <div className="sort-box ">
               <p onClick={()=>{

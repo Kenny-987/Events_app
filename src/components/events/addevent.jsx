@@ -228,8 +228,9 @@ const AddEvent = () => {
         <option value="health">Health</option>
         <option value="fundraising">Fundraising</option>
         <option value="food">Food</option>
-        <option value="party">Party/Festival</option>
-        {/* Add more options as needed */}
+        <option value="party">Party</option>
+        <option value="party">Festival</option>
+     
       </select>
         </div>
         <div className="submitbtn">
