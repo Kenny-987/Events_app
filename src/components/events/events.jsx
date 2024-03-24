@@ -137,7 +137,7 @@ const filterEventsFunc  = (category)=>{
         <div className="loadingdata"></div>
       </div>}
       {error == true && !isLoading  ? (
-        <div className="apiError">Server Error, try reloading page</div>
+        <div className="apiError">Network Error, try reloading page</div>
       ) : (
         <Event eventdata={filteredEvent} loading={isLoading} length={eventsData} />
       )}

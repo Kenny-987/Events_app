@@ -3,12 +3,12 @@ import { createContext, useContext, useEffect, useState } from "react";
 //context api,I think for storing data globally especially the jwt token
 const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
-  const [data, setData] = useState({ user: null, token: null });
+  const [data, setData] = useState({ user: null, token: null, email: null});
   const [eventData, setEventData] = useState({});
 
   //getting infromation from successful login
-  const login = (user, token) => {
-    setData({ user, token });
+  const login = (user, token,email) => {
+    setData({ user, token, email});
   };
   const logout = () => {
     setData({ user: null, token: null });
