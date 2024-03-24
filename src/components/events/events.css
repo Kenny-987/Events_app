@@ -59,6 +59,7 @@
   border-radius: 8px;
   position: relative;
   cursor: pointer;
+  z-index: 10;
 }
 .filter{
   background-color: #fff;

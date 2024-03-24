@@ -7,7 +7,8 @@ import { useAuth } from "../../authContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
-  faClose
+  faClose,
+  faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -24,9 +25,6 @@ const Events = () => {
   const { token } = data;
   const navigate = useNavigate();
 
-
-
-  
   const toAddEventPage = () => {
     if (!token) {
       setVerifiedUser(true);
@@ -65,6 +63,21 @@ const filterEventsFunc  = (category)=>{
   }
 }
 
+const sortEventsByDate = () => {
+  const sortedEvents = [...filteredEvent].sort((a, b) => new Date(a.date) - new Date(b.date));
+  setFilteredEvent(sortedEvents);
+  // setSortBy("date");
+};
+
+const sortEventsByPrice = () => {
+  const sortedEvents = [...filteredEvent].sort((a, b) => {
+    // Convert prices to numbers for comparison
+    const priceA = a.fee != null ? parseFloat(a.fee) : 0;
+    const priceB = b.fee != null ? parseFloat(b.fee) : 0;
+    return priceA - priceB;
+  });
+  setFilteredEvent(sortedEvents);
+};
  
   return (
     <section className="events">
@@ -113,22 +126,32 @@ const filterEventsFunc  = (category)=>{
   
       <div className="heading">
         <h3>Upcoming Events:  </h3>
-        {/* <div className="sorting">
+
+  {/* div to sort events */}
+        <div className="sorting">
           <div className="sort-box ">
               <p onClick={()=>{
                 setShowFilter(!showFilter)
               }}>Sort By <span> <FontAwesomeIcon  icon={faArrowDown} /></span></p>
               {showFilter && 
               <div className="filter">
-              <button>
+              <button onClick={()=>{
+                sortEventsByDate()
+                setShowFilter(!showFilter)
+                }}>
               Date
            </button>
-           <button>
+           <button onClick={()=>{
+            sortEventsByPrice()
+            setShowFilter(!showFilter)
+            }}>
               Price
            </button>
               </div> }
           </div>
-        </div> */}
+        </div>
+        {/* div to sort events */}
+
       </div>
       {eventsData.length === 0 && !isLoading && !error&& <div className="nodata">
         No Events Yet... Check again Later or Add your own Event
