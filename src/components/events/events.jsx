@@ -43,7 +43,8 @@ const Events = () => {
         const response = await fetch(api);
         const events = await response.json();
         setEventsData(events);
-        setFilteredEvent(events)
+        const filteredEvents = events.filter(event => new Date(event.date) > new Date());
+        setFilteredEvent(filteredEvents)
         eventsInfo(eventsData);
       } catch (error) {
         console.error("error getting events", error);
