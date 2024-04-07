@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
   faClose,
-  faArrowDown
+  faArrowDown,faArrowUp
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -133,7 +133,7 @@ const sortEventsByPrice = () => {
           <div className="sort-box ">
               <p onClick={()=>{
                 setShowFilter(!showFilter)
-              }}>Sort By <span> <FontAwesomeIcon  icon={faArrowDown} /></span></p>
+              }}>Sort By <span> {showFilter?<FontAwesomeIcon  icon={faArrowUp} />:<FontAwesomeIcon  icon={faArrowDown} />}</span></p>
               {showFilter && 
               <div className="filter">
               <button onClick={()=>{
