@@ -64,13 +64,14 @@ const Footer = () => {
   return (
     <section className="footer">
       <div className="footer-item contacts">
-        <h4>Contact EventFlow</h4>
+        <h3>Contact us</h3>
         <p>
           <FontAwesomeIcon icon={faPhone} /> +263789644097
         </p>
         <p>
           <FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:eventflowzw@gmail.com">eventflowzw@gmail.com</a>
         </p>
+        </div>
         <div className="footer-policy">
         <p onClick={()=>{
           navigate("/policy")
@@ -81,13 +82,8 @@ const Footer = () => {
          }}>Terms of Use</p>
          
         </div>
-      </div>
-      <div className="footer-item about">
-        {" "}
-        Designed and Developed by  <a href="https://kennethmadondo.netlify.app" target="_blank">Kenneth Madondo</a>{' '}
-        in association with <a href="https://www.linkedin.com/in/isheanesu-chifamba-366244198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Isheanesu Chifamba</a>
-      </div>
-      <div className="footer-item feedback">
+      
+        <div className="footer-item feedback">
         <p>
           <FontAwesomeIcon icon={faInfoCircle} />{" "}
           <Link to="/about" className="about-link">
@@ -98,6 +94,15 @@ const Footer = () => {
           <FontAwesomeIcon icon={faEdit} /> Feedback
         </h4>
       </div>
+
+      <div className="footer-item about">
+        {" "}
+       Developed by  <a href="https://kennethmadondo.netlify.app" target="_blank">Kenneth Madondo</a>{' '}
+        & <a href="https://www.linkedin.com/in/isheanesu-chifamba-366244198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Isheanesu Chifamba</a>
+      </div>
+    <div className="copyright">
+      <p>© EventFlow 2024</p>
+    </div>
 
       {isFeedbackOpen && (
         <div className="modal">

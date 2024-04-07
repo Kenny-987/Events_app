@@ -6,7 +6,7 @@ import {
   faClose,
   faHome,
   faBars,
-  faCircleInfo
+  faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.css";
 import { useAuth } from "../../authContext";
@@ -43,7 +43,7 @@ const Navbar = () => {
         className='menu-icon'
         onClick={toggleMobileMenu}
       >
-        <FontAwesomeIcon icon={faBars} />
+       {mobileMenuOpen ?  <FontAwesomeIcon icon={faClose} />:<FontAwesomeIcon icon={faBars} /> } 
       </div>
       <nav className={`${mobileMenuOpen ? "showlinks" : "links"}`}>
         <div
