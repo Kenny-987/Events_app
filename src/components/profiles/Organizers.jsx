@@ -75,7 +75,7 @@ const{businessName,coverImage,location} = organizer
 
  return ( <div className="profilecard" key= {organizer._id} onClick={()=>{showOrgarnizerDetails(organizer)}}>
   {coverImage ? <div className="cardImage">
-    <img src={organizer.coverImage + "?alt=media"} alt="" />
+    <img src={organizer.coverImage} alt="" />
   </div> : <div className="cardImage">
     <img src={image3} alt="" />
   </div> }
