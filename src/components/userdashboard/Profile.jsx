@@ -87,7 +87,7 @@ return (
 //fetching user profile data
 const getProfileData = async()=>{
   try {
-    const response = await fetch("http://localhost:3000/auth/profiledata",{
+    const response = await fetch("https://events-server-2d4h.onrender.com/auth/profiledata",{
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -122,7 +122,7 @@ const handleSubmit = async (e)=>{
 e.preventDefault()
 setIsLoading(true)
 try {
-    const response = await fetch("http://localhost:3000/auth/editprofile", {
+    const response = await fetch("https://events-server-2d4h.onrender.com/auth/editprofile", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -161,7 +161,7 @@ const formData = new FormData()
  formData.append("image", image)
 
 try {
-  const response = await fetch("http://localhost:3000/auth/addcoverimage", {
+  const response = await fetch("https://events-server-2d4h.onrender.com/auth/addcoverimage", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -192,7 +192,7 @@ const deleteCoverImage = async(e)=>{
 e.preventDefault()
 setIsLoading(true)
 try {
-  const response = await fetch(`http://localhost:3000/auth/delcoverimage`, {
+  const response = await fetch(`https://events-server-2d4h.onrender.com/auth/delcoverimage`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -222,7 +222,7 @@ setIsLoading(true)
 const removeFromServices = async (indexToRemove) => {
     try {
         // Send a request to the backend to delete the service item
-        const response = await fetch(`http://localhost:3000/auth/deleteService/${indexToRemove}`, {
+        const response = await fetch(`https://events-server-2d4h.onrender.com/auth/deleteService/${indexToRemove}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
