@@ -23,7 +23,7 @@ const showOrgarnizerDetails=(organizer)=>{
   useEffect(() => {
     const getOrganizers = async () => {
       try {
-        const response = await fetch("http://localhost:3000/profile/organizers");
+        const response = await fetch("https://events-server-2d4h.onrender.com/profile/organizers");
         const organizers = await response.json();
         if(response.ok){
           setOrganizers(organizers);
