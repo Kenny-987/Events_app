@@ -373,7 +373,17 @@ textarea {
   width: 94%;
   margin: auto;
 }
-.addeventbtn{
+
+.toprofiles button{
+  display: block;
+  font-size: 20px;
+  background-color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.addeventbtn,.toprofiles{
   /* border: 1px solid red; */
 width: fit-content;
 margin: auto;

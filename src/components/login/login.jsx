@@ -32,7 +32,7 @@ const Login = () => {
     //production api dont forget to uncomment before commit
    const api = "https://events-server-2d4h.onrender.com/auth/login";
    //testing api
-  //  const api = "http://localhost:3000/auth/login"
+    //const api = "http://localhost:3000/auth/login"
     try {
       const response = await fetch(api, {
         method: "POST",
@@ -45,14 +45,14 @@ const Login = () => {
         const data = await response.json();
         const dataToStore = JSON.stringify(data);
         const { user, token } = data;
-
+console.log(data)
         sessionStorage.setItem("userData", dataToStore); //storing data in session storage
         setIslogged(true);
 
         setTimeout(() => {
           setIslogged(false);
           navigate("/");
-          login(data.user, data.token, data.email);
+          login(data.user, data.token, data.email,data.organizerDetails);
         }, 1000);
       } else if (response.status === 401) {
         setInvalidPassword(true);

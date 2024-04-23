@@ -1,0 +1,227 @@
+.profiles{
+    margin-top: 60px;
+ color: #333;
+ background-color: #fff;
+position: relative;
+}
+.profiles h3{
+text-align: center;
+}
+
+.profilecards{
+    /* border: 2px solid black; */
+     width: 96%;
+  margin: auto;
+       margin-top: 20px;
+       /* display: flex;
+       justify-content: space-between; */
+    
+}
+.profilecard{
+    /* border: 1px solid red; */
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 1px #cccccc;
+    margin-bottom: 10px; 
+}
+.profilecard p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cardImage{
+    height: 200px;
+    /* border: 1px solid red; */
+}
+.cardImage img{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+    object-fit: cover;
+}
+
+.cardname{
+/* border: 1px solid red; */
+padding: 6px;
+font-size: 18px;
+font-weight: 700;
+}
+
+
+.businessname{
+    margin-top: 10px;
+}
+.carddetail p small {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.back{
+    /* border: 1px solid #333; */
+    width: fit-content;
+    margin: 10px;
+    padding: 4px;
+    font-size: 20px;
+    
+}
+.organizerdetails{
+    background-color: #fff;
+    width: 98%;
+    margin: auto;
+    margin-top: 60px;
+    padding-bottom: 20px;
+}
+.organizerdetails .profilecard{
+   box-shadow: none;
+    margin: auto;
+    width: 96%;
+}
+.bio{
+    font-size: 18px;
+}
+.carddetail{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.cardcontacts{
+    font-size: 18px;
+}
+.cardcontacts a{
+    text-decoration: none;
+    color: #1c7fb1;
+}
+.header{
+    font-weight: 700;
+    font-size: 18px;
+}
+.linkstopages{
+     margin-top:20px ;
+     display: flex;
+     width: fit-content;
+     gap: 20px;
+     margin: auto;
+}
+.linkstopages .whatsapp svg{
+    color: #25d366;
+}
+.linkstopages .insta svg{
+    color: #c13584;
+}
+.address{
+    margin-top: 10px;
+}
+.linkstopages svg{
+    font-size: 35px;
+}
+.portfolioImagesa{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+.portfolioImgbox{
+    width: 49%;
+    margin-bottom: 10px;
+    height: 180px;
+    border-radius: 6px;
+}
+.portfolioImagea{
+    border: 1px solid rgb(59, 59, 59);
+     width: 49%; 
+     margin-bottom: 4px; 
+    height: 150px;
+    border-radius: 6px;
+}
+.portfolioImage{
+    border: 1px solid rgb(255, 255, 255);
+    /* width: 49%; */
+    /* margin-bottom: 4px; */
+    height: 150px;
+    border-radius: 6px;
+}
+.noimages{
+    margin-bottom: 10px;
+    color: #333333d7
+}
+.portfolioImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.portfolioImagea img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.portfolio .close{
+    padding: 2px;
+    position: fixed;
+    font-size: 36px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+.expandImage{
+    position: fixed;
+    width: 100%;
+    top: 52px;
+    left: 0%;
+    height: 100vh;
+    background-color: #000000c0;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    max-width: 100vw;
+    white-space: nowrap;
+    overflow-x: auto; 
+    padding: 10px;
+    flex-wrap: nowrap; 
+    scroll-snap-type: x mandatory;
+}
+.expandedImage{
+    /* border: 1px solid rgb(214, 17, 17); */
+     position: relative;
+     padding: 4px;
+    /* top: 50%;
+    left: 50%;
+    width: 98%;
+    transform: translate(-50%,-50%); */
+    height: 400px;
+    display: inline-block;
+    min-width: 90%;
+    margin:auto;
+    scroll-snap-align: center;
+    border-radius: 8px;
+}
+.expandedImage img{
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.move{
+    font-size: 40px;
+    color: #000;
+    position: fixed;
+}
+.moveleft{
+    
+    top: 53%;
+    z-index: 1;
+   
+}
+.moveright{
+   
+    top: 53%;
+    right: 0;
+    z-index: 1;
+   
+}
+.modalopen{
+    overflow: hidden;
+    overflow-y: hidden;
+}

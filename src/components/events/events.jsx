@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
   faClose,
-  faArrowDown,faArrowUp
+  faArrowDown,faArrowUp,
+  faArrowRight
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -165,6 +166,10 @@ const sortEventsByPrice = () => {
       ) : (
         <Event eventdata={filteredEvent} loading={isLoading} length={eventsData} />
       )}
+
+      <div className="toprofiles">
+        <button onClick={()=>navigate("/profiles")}>View Organizers and Planners <FontAwesomeIcon icon={faArrowRight} /></button>
+        </div>
       <div className="addeventbtn">
         <button onClick={toAddEventPage}>Add Your Own Events <FontAwesomeIcon icon={faPlusCircle} /></button>
         {verifiedUser && (
@@ -172,7 +177,7 @@ const sortEventsByPrice = () => {
           <p> <span onClick={()=>{
             navigate('/login')
         setVerifiedUser(false)
-        }}>Login</span> to Add an Event</p>
+        }}>Login</span> to Add an Event </p>
           <FontAwesomeIcon
             icon={faClose}
             className="closenoauth"

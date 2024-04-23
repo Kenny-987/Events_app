@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import MyEvents from "./MyEvents";
 import Logout from "./Logout"
 import Delete from "./Delete";
-import Liked from "./Liked"
+import Profile from "./Profile";
 import Settings from "./Settings";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,7 +14,7 @@ import {
   faWarning,
   faArrowDown,
   faGears,
-  faHeart
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../authContext";
 
@@ -26,7 +26,7 @@ const Dashboard = () => {
   const [selectLink, setSelectLink] = useState("events");
   const { data, logout } = useAuth();
   const [showNav,setShowNav]=useState(false)
-  const { user, token } = data;
+  const { user, token,organizerDetails } = data;
   const navigate = useNavigate();
   useEffect(() => {
     localStorage.setItem("selectLink", selectLink);
@@ -57,27 +57,32 @@ const Dashboard = () => {
         }}>
           <FontAwesomeIcon icon={faSitemap} /> My Events
         </div>
-        {/* Link */}
-{/* 
-          <div className="dashlink" onClick={()=>{
-            showComponent("liked")
-            setShowNav(!showNav)
-                   }}>
-                     <FontAwesomeIcon icon={faHeart} /> Liked Events
-                   </div> */}
-                   {/* Link */}
-                   <div className="dashlink" onClick={()=>{
+        
+        {organizerDetails.isOrganizer && <div className="dashlink" onClick={()=>{
+        showComponent("profile")
+        setShowNav(!showNav)
+        }}>
+          <FontAwesomeIcon icon={faUser} /> Profile
+        </div> }
+         
+
+              
+         <div className="dashlink" onClick={()=>{
           showComponent("settings")
           setShowNav(!showNav)
         }}>
           <FontAwesomeIcon icon={faGears} /> Account Settings
         </div>
+
+
         <div className="dashlink" onClick={()=>{
           showComponent("logout")
           setShowNav(!showNav)
         }}>
           <FontAwesomeIcon icon={faSignOut} /> Sign Out
         </div>
+
+
         <div  className="dashlink delete-account"
           onClick={() => {
             showComponent("delete")
@@ -94,7 +99,7 @@ const Dashboard = () => {
         {selectLink === null && <MyEvents />}
         {selectLink === "events" && <MyEvents />}
         {selectLink === "settings" && <Settings />}
-        {/* {selectLink === "liked" && <Liked />} */}
+        {selectLink === "profile" && <Profile />}
         {selectLink === "logout" && <Logout signOut={signOut} />}
         {selectLink === "delete" && <Delete />}
       </div>

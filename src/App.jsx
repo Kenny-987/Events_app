@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./components/login/login";
 import Layout from "./Layout";
 import AddEvent from "./components/events/addevent";
+import Organizers from "./components/profiles/Organizers"
+import Organizerdetails from "./components/profiles/Organizerdetails";
 import Dashboard from "./components/userdashboard/dashboard";
 import About from "./components/footer/about";
 import Policy from "./components/login/Policy";
@@ -20,6 +22,8 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/policy" element={<Policy />} />
           <Route path="/forgotpassword" element={<Emailform />} />
+          <Route path="/profiles" element={<Organizers/>}/>
+          <Route path="/organizerdetails" element={<Organizerdetails/>}/>
           <Route path="/addevent" element={<AddEvent />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />

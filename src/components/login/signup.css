@@ -21,6 +21,26 @@
   gap: 4px;
   margin-bottom: 6px;
 }
+
+.choice{
+  padding:  10px;
+}
+
+.more-userdetails textarea {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 4px;
+  resize: none;
+  height: 100px;
+}
+.more-userdetails textarea:focus {
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #074aad;
+}
+.more-userdetails textarea::placeholder{
+  color: #727272;
+}
 .input {
   color: #333333;
   font-size: 16px;
@@ -91,7 +111,7 @@ label small{
 }
 .done {
   font-size: 18px;
-  width: 40%;
+  min-width: 40%;
   margin: auto;
   margin-top: 20px;
   text-align: center;
