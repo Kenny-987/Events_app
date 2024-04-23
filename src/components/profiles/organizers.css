@@ -32,6 +32,7 @@ text-align: center;
 .cardImage{
     height: 200px;
     border: 1px solid #333; 
+    border-radius:6px;
 }
 .cardImage img{
     border-top-left-radius: 6px;
