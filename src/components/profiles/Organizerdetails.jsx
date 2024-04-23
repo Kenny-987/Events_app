@@ -82,7 +82,7 @@ const Organizerdetails = () => {
     <p> <a href={`mailto:${email}`}>{email}</a></p>
     </div>
     <div className="cardcontacts">
-    <p><a href={website} target='_blank'>{website}</a></p>
+    <p><a href={website} target='_blank'></a>{website}</p>
     </div>
     <div className="cardcontacts">
       {address && <>
