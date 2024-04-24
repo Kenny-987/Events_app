@@ -45,12 +45,17 @@ const showOrgarnizerDetails=(organizer)=>{
     getOrganizers();
   }, []); 
 
+  if (isLoading){
+  return   <div className="loadingdatabox">
+  <div className="loadingdata"></div>
+</div>
+}
+
 if(organizersData.length < 1 || organizersData.length === 0){
-return  <div className="nodata">
+return  <div className="noorganizers nodata">
 No Profiles yet... Try creating your own profile page
 </div> 
 }
-
 
   return (
     <div className='profiles'> 
