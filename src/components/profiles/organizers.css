@@ -8,6 +8,12 @@ position: relative;
 text-align: center;
 }
 
+.noorganizers{
+    margin-top: 80px;
+}
+.loadorganizers{
+    margin-top: 80px;
+}
 .profilecards{
     /* border: 2px solid black; */
      width: 96%;
@@ -201,7 +207,7 @@ flex-wrap: wrap;
     border-radius: 8px;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .move{
     font-size: 40px;
