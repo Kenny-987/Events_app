@@ -14,11 +14,11 @@
     border-radius: 4px;
     position: relative;
   }
-  .image{
+  .c-image{
     height: 100%;
     /* border: 2px solid rgb(255, 0, 0); */
   }
-  .image img{
+  .c-image img{
     object-fit: contain;
   }
   .editImage{
