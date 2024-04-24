@@ -7,7 +7,12 @@ position: relative;
 .profiles h3{
 text-align: center;
 }
-
+.noorganizers{
+    margin-top: 80px;
+}
+.loadorganizers{
+    margin-top: 80px;
+}
 .profilecards{
     /* border: 2px solid black; */
      width: 96%;
