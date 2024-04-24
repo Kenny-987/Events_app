@@ -266,7 +266,7 @@ const {facebook,instagram,whatsApp}=socialMedia
     
     {/* cover image section */}
     <div className="cover-image">
-    {coverImage !==null && coverImage !=="" ? ( <div className='image'><FontAwesomeIcon icon={faCamera} className='editimageicon' onClick={()=>{
+    {coverImage !==null && coverImage !=="" ? ( <div className='c-image'><FontAwesomeIcon icon={faCamera} className='editimageicon' onClick={()=>{
           setEditImageDiv(!editImageDiv)
         }}/>
     <img src={workingImage + "?alt=media"} alt="" />
