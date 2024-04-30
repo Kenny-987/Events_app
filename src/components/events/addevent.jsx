@@ -220,6 +220,7 @@ const AddEvent = () => {
       >
         <option value="">Select a category</option>
         <option value="art">Art</option>
+        <option value="conference">Conference</option>
         <option value="music">Music</option>
         <option value="business">Business</option>
         <option value="education">Education</option>
