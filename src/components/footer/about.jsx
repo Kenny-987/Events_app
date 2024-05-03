@@ -31,7 +31,10 @@ useEffect(()=>{
         Our commitment is to empower local businesses, artists, and organizers
         by providing them with a dedicated space to showcase their events. By
         doing so, we contribute to the growth and prosperity of our own
-        community. Whether you're seeking the latest art exhibition, live music
+        community. 
+        </p>
+        <p>
+        Whether you're seeking the latest art exhibition, live music
         performances, or neighborhood festivals, you can navigate through our
         website with ease, confident that every event is tailored to your
         interests and located right in your backyard. The simplicity of our
@@ -39,7 +42,10 @@ useEffect(()=>{
         events, allowing you to quickly find what you're looking for without the
         distraction of irrelevant information. The intuitive design ensures that
         you can effortlessly explore upcoming events, discover hidden gems, and
-        engage with the heartbeat of our town. For local businesses and event
+        engage with the heartbeat of our town. 
+        </p>
+        <p>
+        For local businesses and event
         organizers, our platform serves as a powerful tool to reach the right
         audience. By focusing solely on local events, we provide a targeted and
         effective way for businesses to connect with their community. Our
