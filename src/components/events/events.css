@@ -501,8 +501,9 @@ padding: 4px;
     margin-top: 30px;
   }
 }
-/* @media (min-width: 769px) {
+@media (min-width: 769px) {
   .event {
     min-width: 40%;
+  
   }
-} */
+}

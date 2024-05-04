@@ -78,7 +78,7 @@ No Profiles yet... Try creating your own profile page
 const{businessName,coverImage,location} = organizer  
 
 
- return ( <div className="profilecard" key= {organizer._id} onClick={()=>{showOrgarnizerDetails(organizer)}}>
+ return ( <div className="profilecarda" key= {organizer._id} onClick={()=>{showOrgarnizerDetails(organizer)}}>
   {coverImage ? <div className="cardImage">
     <img src={organizer.coverImage +"?alt=media"} alt="" />
   </div> : <div className="cardImage">

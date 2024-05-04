@@ -2,12 +2,12 @@ import "./banner.css";
 import React, { useState, useEffect } from "react";
 const Banner = () => {
   const textArray = [
-    "Parties",
+    "Exhibitions",
     "Conferences",
-    "Festivals",
+    "Sports",
     "Concerts",
-    "WorkShops",
-    "AnyEvents",
+    "Community fairs",
+    "Workshops",
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   useEffect(() => {
@@ -24,7 +24,7 @@ const Banner = () => {
     <div className="banner">
       <div className="intro"> 
         <h1>
-         Discover concerts, festivals, workshops, and more happening in Bulawayo. With our local events website, you'll never miss out on the latest happenings.
+         Discover events happening in Zimbabwe, including concerts, festivals, workshops, and more. With our local events website, you'll never miss out on the latest happenings.
         </h1>
       </div>
       <div className="event-listings">
