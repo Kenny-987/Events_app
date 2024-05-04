@@ -30,7 +30,7 @@ const formData = new FormData()
     for( let i =0;i<inputImages.length;i++){
   formData.append("images",inputImages[i])
 }
-    const response = await fetch("http://localhost:3000/auth/portfolio",{
+    const response = await fetch("https://events-server-2d4h.onrender.com/auth/portfolio",{
       method: "POST", 
       headers: {
         Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ const formData = new FormData()
 const deleteImage = async(indexToRemove,img)=>{
   setLoadingIndex(indexToRemove);
   try {
-    const response = await fetch(`http://localhost:3000/auth/delportfolioimg/${indexToRemove}`, {
+    const response = await fetch(`https://events-server-2d4h.onrender.com/auth/delportfolioimg/${indexToRemove}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",

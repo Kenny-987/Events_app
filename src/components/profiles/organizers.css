@@ -7,7 +7,6 @@ position: relative;
 .profiles h3{
 text-align: center;
 }
-
 .noorganizers{
     margin-top: 80px;
 }
@@ -37,7 +36,9 @@ text-align: center;
 }
 .cardImage{
     height: 200px;
-    /* border: 1px solid red; */
+    border: 1px solid #333; 
+    border-radius:6px;
+    padding:1px;
 }
 .cardImage img{
     border-top-left-radius: 6px;

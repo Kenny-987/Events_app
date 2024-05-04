@@ -382,6 +382,7 @@ textarea {
   padding: 8px;
   border-radius: 4px;
   cursor: pointer;
+  color: #333;
 }
 .addeventbtn,.toprofiles{
   /* border: 1px solid red; */

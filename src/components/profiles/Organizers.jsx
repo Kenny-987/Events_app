@@ -45,7 +45,7 @@ const showOrgarnizerDetails=(organizer)=>{
     getOrganizers();
   }, []); 
 
-if (isLoading){
+  if (isLoading){
   return   <div className="loadingdatabox">
   <div className="loadingdata"></div>
 </div>
@@ -56,7 +56,6 @@ return  <div className="noorganizers nodata">
 No Profiles yet... Try creating your own profile page
 </div> 
 }
-
 
   return (
     <div className='profiles'> 
@@ -81,7 +80,7 @@ const{businessName,coverImage,location} = organizer
 
  return ( <div className="profilecard" key= {organizer._id} onClick={()=>{showOrgarnizerDetails(organizer)}}>
   {coverImage ? <div className="cardImage">
-    <img src={organizer.coverImage + "?alt=media"} alt="" />
+    <img src={organizer.coverImage +"?alt=media"} alt="" />
   </div> : <div className="cardImage">
     <img src={image3} alt="" />
   </div> }

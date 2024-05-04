@@ -111,7 +111,7 @@ label small{
 }
 .done {
   font-size: 18px;
-  min-width: 40%;
+  width: 40%;
   margin: auto;
   margin-top: 20px;
   text-align: center;

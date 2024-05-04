@@ -27,7 +27,7 @@ const Organizerdetails = () => {
             </div>
 <div className="profilecard" key= {organizer._id}>
   {coverImage ? <div className="cardImage">
-    <img src={coverImage+"?alt=media"} alt="coverImage" />
+    <img src={coverImage +"?alt=media"} alt="coverImage" />
   </div> : <div className="cardImage">
     <img src={image3} alt="" />
   </div> }
