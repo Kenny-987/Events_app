@@ -66,7 +66,7 @@ const Footer = () => {
       <div className="footer-item contacts">
         <h3>Contact us</h3>
         <p>
-          <FontAwesomeIcon icon={faPhone} /> +263789644097
+          <FontAwesomeIcon icon={faPhone} /> +263719551509
         </p>
         <p>
           <FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:eventflowzw@gmail.com">eventflowzw@gmail.com</a>
