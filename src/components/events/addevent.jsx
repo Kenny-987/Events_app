@@ -15,6 +15,7 @@ const AddEvent = () => {
   const [phone,setPhone]=useState("")
   const [success, setSuccess] = useState(false);
   const [image, setImage] = useState(null);
+  const [city,setCity]=useState("")
   const [isLoading, setIsLoading] = useState(false);
   const [submitErr,setSubmitErr]=useState(false)
   const { data } = useAuth();
@@ -25,8 +26,8 @@ const AddEvent = () => {
   const handleSubmit = async (e) => {
 
     //production api
-     const api = "https://events-server-2d4h.onrender.com/event/create";
-    //  const api = "https://localhost:3000/event/create"
+   //  const api = "https://events-server-2d4h.onrender.com/event/create";
+     const api = "http://localhost:3000/event/create"
     const author = user;
     e.preventDefault();
     setIsLoading(true);
@@ -36,6 +37,7 @@ const AddEvent = () => {
     try {
       const formData = new FormData();
       formData.append("title", title);
+      formData.append("city", city);
       formData.append("location", location);
       formData.append("date", date);
       formData.append("fee", fee);
@@ -101,8 +103,23 @@ const AddEvent = () => {
           />
         </div>
         <div className="form-input">
+          <label htmlFor="city" className="label">
+            City <span className="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="city"
+            className="input"
+            required
+            value={city}
+            onChange={(e) => {
+              setCity(e.target.value);
+            }}
+          />
+        </div>
+        <div className="form-input">
           <label htmlFor="location" className="label">
-            Location <span className="required">*</span>
+            Address <span className="required">*</span>
           </label>
           <input
             type="text"

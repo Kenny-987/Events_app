@@ -6,7 +6,7 @@ const Banner = () => {
     "Conferences",
     "Sports",
     "Concerts",
-    "Community fairs",
+    "Community",
     "Workshops",
   ];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
