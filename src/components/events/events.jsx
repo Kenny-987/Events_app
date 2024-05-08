@@ -28,46 +28,27 @@ const Events = () => {
   const [searchItem,setSearchItem]= useState("")
   const { data } = useAuth();
   const { token } = data;
+  const [locationPermission,setLocationPermission]=useState(null)
   const navigate = useNavigate();
  const [position,setPosition]=useState({latitude:null,longitude:null})
 const [userCity,setUserCity]=useState(null)
 
 //function to get user location, latitude and longitude
-
-const GetUserLocation = ()=>{
-if(navigator.geolocation){
-  navigator.geolocation.getCurrentPosition((position)=>{
- setPosition({latitude:position.coords.latitude,longitude:position.coords.longitude})
-  })
-}else{
-  console.log("geolocation not available")
-}
-}
-
-
-
-useEffect(() => {
-  const handlePermission = async () => {
-    const permission = await navigator.permissions.query({ name: "geolocation" });
-    if (permission.state === "granted") {
-      GetUserLocation();
-      
-    } else {
-      console.log("Location permission denied.");
-      // Handle permission denied case (optional)
+useEffect(()=>{
+  const GetUserLocation = ()=>{
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition((position)=>{
+     setPosition({latitude:position.coords.latitude,longitude:position.coords.longitude})
+      })
+    }else{
+      console.log("geolocation not available")
     }
-  };
-
-  if (!position.latitude && !position.longitude) {
-    handlePermission();
-  }
-}, []);
-
-
+    }
+    GetUserLocation()
+},[])
 
 
 const {latitude,longitude}=position
-
 //function to get user city 
 const apiKey = "AuZRaa5NUz6I7It4H_YVC4I0_-joUkxVuwlooTxK_4KJvT7fhjT6fd-cxtg842GP"
 const bingMapsUrl = `https://dev.virtualearth.net/REST/v1/Locations/${latitude},${longitude}?o=json&key=${apiKey}`
@@ -149,7 +130,7 @@ const sortEventsByPrice = () => {
   setFilteredEvent(sortedEvents);
 };
  
-const cities=['Harare','Bulawayo','Chitungwiza','Gweru','Victoria Falls','Mutare','Kwekwe','Kadoma','Marondera','Beitbridge']
+const cities=['Harare','Bulawayo','Chitungwiza','Gweru','Victoria Falls','Mutare','Kwekwe','Kadoma','Marondera','Beitbridge','Gwanda','Hwange','Chegutu','Karoi']
 
 const filteredCities = cities.filter(city=>city.toLowerCase().startsWith(searchItem.toLowerCase()))
 const handleKeyPress=(e)=>{
