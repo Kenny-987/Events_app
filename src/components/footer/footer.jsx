@@ -97,8 +97,7 @@ const Footer = () => {
 
       <div className="footer-item about">
         {" "}
-       Developed by  <a href="https://kennethmadondo.netlify.app" target="_blank">Kenneth Madondo</a>{' '}
-        & <a href="https://www.linkedin.com/in/isheanesu-chifamba-366244198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Isheanesu Chifamba</a>
+       Developed by  <a href="https://kennethmadondo.netlify.app" target="_blank">Kenneth Madondo</a>
       </div>
     <div className="copyright">
       <p>© EventFlow 2024</p>
