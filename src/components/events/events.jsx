@@ -60,6 +60,7 @@ const getUserCity = async()=>{
       const response = await fetch(bingMapsUrl)
       const usersCity = await response.json()
       const city = usersCity.resourceSets[0].resources[0].address.locality;
+      console.log(city)
       setUserCity(city)
     } catch (error) {
       console.error("error: ",error)
