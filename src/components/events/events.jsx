@@ -39,6 +39,7 @@ useEffect(()=>{
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition((position)=>{
      setPosition({latitude:position.coords.latitude,longitude:position.coords.longitude})
+
       })
     }else{
       console.log("geolocation not available")
@@ -46,33 +47,31 @@ useEffect(()=>{
     }
     GetUserLocation()
 },[])
- 
+
 
 const {latitude,longitude}=position
 //function to get user city 
 const apiKey = "AuZRaa5NUz6I7It4H_YVC4I0_-joUkxVuwlooTxK_4KJvT7fhjT6fd-cxtg842GP"
 const bingMapsUrl = `https://dev.virtualearth.net/REST/v1/Locations/${latitude},${longitude}?o=json&key=${apiKey}`
-useEffect(()=>{
-  const getUserCity = async()=>{
-    if(latitude && longitude){
-      try {
-      
-        const response = await fetch(bingMapsUrl)
-        const usersCity = await response.json()
-        const city = usersCity.resourceSets[0].resources[0].address.locality;
-        setUserCity(city)
-        console.log(userCity)
-      } catch (error) {
-        console.error("error: ",error)
-      }
+
+const getUserCity = async()=>{
+  if(latitude && longitude){
+    try {
+      const response = await fetch(bingMapsUrl)
+      const usersCity = await response.json()
+      const city = usersCity.resourceSets[0].resources[0].address.locality;
+      setUserCity(city)
+    } catch (error) {
+      console.error("error: ",error)
     }
   }
+}
+
+useEffect(()=>{
    if (position.latitude && position.longitude) {
     getUserCity();
   }
-
 },[])
-
 
 
   const toAddEventPage = () => {
@@ -153,6 +152,9 @@ const cityFilter = (city)=>{
 
 //function to show events matching user city
 const userCityFilter=()=>{
+  if (position.latitude && position.longitude) {
+    getUserCity();
+  }
   if(userCity){
     cityFilter(userCity)
     setShowCities(false)
@@ -273,6 +275,7 @@ const userCityFilter=()=>{
                   }} >In My City</li>
                   {filteredCities.map((city,index)=>{
                   return <li key={index} onClick={()=>{
+                    console.log("the city:",city)
                     cityFilter(city)
                     setSearchItem(city)
                     setShowCities(false)
