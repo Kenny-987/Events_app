@@ -43,7 +43,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 10px;
   color: #333333;
   background-color: #fff;
   border-radius: 4px;
@@ -51,15 +51,33 @@
   margin: auto;
   margin-top: 50px;
 }
+.filterparent{
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 2px 0;
+}
 
 .sort-box{
   width: 100px;
   background-color: #fff;
-  padding: 8px;
+  padding: 2px;
   border-radius: 8px;
   position: relative;
   cursor: pointer;
   z-index: 10;
+}
+.sort-box input{
+  border: 1px solid #333;
+  border-radius: 4px;
+  width: 100px;
+  padding: 2px;
+  font-size: 16px;
+}
+.sort-box input:focus{
+  border:  1px solid #333;
+  outline: none;
 }
 .filter{
   background-color: #fff;
@@ -82,8 +100,32 @@ width: 100%;
 cursor: pointer;
 margin-top: 4px;
 }
+.filter ul{
+  list-style-type: none;
+}
+.filter ul li:hover{
+background-color: #333;
+color: #fff;
+}
+.extras{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 6px;
+}
+.extras button{
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 4px;
+  color: #333;
+  font-size: 15px;
+}
+.extras button:hover{
+  background-color: #333;
+  color: #fff;
+}
+
 .events-container {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -505,5 +547,25 @@ padding: 4px;
   .event {
     min-width: 40%;
   
+  }
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    color: #333333;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    border: 1px solid;
+  }
+  .filterparent{
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 2px 0;
   }
 }

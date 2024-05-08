@@ -11,6 +11,7 @@ const EventDetails = () => {
   const navigate = useNavigate()
   const {
     title,
+    city,
     location,
     date,
     imagePath,
@@ -34,6 +35,8 @@ window.open(mapsUrl,"_blank")
   useEffect(()=>{
     window.scroll(0,0)
   },[navigate])
+
+
   return (
   
       <div className="event-details" >
@@ -55,10 +58,13 @@ window.open(mapsUrl,"_blank")
               
             </div>
             <div className="details-info">
-              <p>Event Title:</p> <p>{title}</p>
+              <p>Event Title:</p><p>{title}</p>
+            </div>
+            <div className="details-info ">
+              <p>City:</p> <p>{city}</p>
             </div>
             <div className="details-info location" onClick={toMaps}>
-              <p>Location: <small>click to show on map</small></p> <p>{location}</p>
+              <p>Address: <small>click to show on map</small></p> <p>{location}</p>
             </div>
             <div className="details-info">
               <p>Date:</p>

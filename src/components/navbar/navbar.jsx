@@ -37,7 +37,6 @@ const Navbar = () => {
       <Link to="/" >
         <img src={logo} alt="" />
          </Link>
-
       </div>
       <div
         className='menu-icon'
@@ -105,7 +104,7 @@ const Navbar = () => {
 
       {verifiedUser && (
         <div className="warning">
-          <p>Create an Account or Login to Add an Event</p>
+          <p><span className="blue" onClick={()=>{navigate("/signup"); setVerifiedUser(false)}}>Create an Account</span> or <span className="blue" onClick={()=>{navigate("/login"); setVerifiedUser(false)}}>Login</span> to Add an Event</p>
           <FontAwesomeIcon
             icon={faClose}
             className="closeWarning"

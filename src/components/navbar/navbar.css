@@ -26,7 +26,10 @@
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
-
+}
+.blue{
+  color: #1c74f7;
+  text-decoration: underline;
 }
 .links {
   display: flex;

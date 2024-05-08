@@ -9,7 +9,9 @@ import {
   faPlusCircle,
   faClose,
   faArrowDown,faArrowUp,
-  faArrowRight
+  faArrowRight,
+  faLocationCrosshairs,
+  faSoccerBall
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -21,10 +23,76 @@ const Events = () => {
   const { eventsInfo } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
   const [showFilter,setShowFilter]=useState(false)
+  const [showCities,setShowCities]=useState(false)
   const [error, setError] = useState(false);
+  const [searchItem,setSearchItem]= useState("")
   const { data } = useAuth();
   const { token } = data;
   const navigate = useNavigate();
+ const [position,setPosition]=useState({latitude:null,longitude:null})
+const [userCity,setUserCity]=useState(null)
+
+//function to get user location, latitude and longitude
+
+const GetUserLocation = ()=>{
+if(navigator.geolocation){
+  navigator.geolocation.getCurrentPosition((position)=>{
+ setPosition({latitude:position.coords.latitude,longitude:position.coords.longitude})
+  })
+}else{
+  console.log("geolocation not available")
+}
+}
+
+
+
+useEffect(() => {
+  const handlePermission = async () => {
+    const permission = await navigator.permissions.query({ name: "geolocation" });
+    if (permission.state === "granted") {
+      GetUserLocation();
+      
+    } else {
+      console.log("Location permission denied.");
+      // Handle permission denied case (optional)
+    }
+  };
+
+  if (!position.latitude && !position.longitude) {
+    handlePermission();
+  }
+}, []);
+
+
+
+
+const {latitude,longitude}=position
+
+//function to get user city 
+const apiKey = "AuZRaa5NUz6I7It4H_YVC4I0_-joUkxVuwlooTxK_4KJvT7fhjT6fd-cxtg842GP"
+const bingMapsUrl = `https://dev.virtualearth.net/REST/v1/Locations/${latitude},${longitude}?o=json&key=${apiKey}`
+useEffect(()=>{
+  const getUserCity = async()=>{
+    if(latitude && longitude){
+      try {
+      
+        const response = await fetch(bingMapsUrl)
+        const usersCity = await response.json()
+        const city = usersCity.resourceSets[0].resources[0].address.locality;
+        setUserCity(city)
+        console.log(userCity)
+      } catch (error) {
+        console.error("error: ",error)
+      }
+    }
+  }
+   if (position.latitude && position.longitude) {
+    getUserCity();
+  }
+
+},[])
+
+
 
   const toAddEventPage = () => {
     if (!token) {
@@ -35,9 +103,9 @@ const Events = () => {
   };
 
   // production api dont forget to uncomment before commiting
-  const api = "https://events-server-2d4h.onrender.com/event/activities";
+const api = "https://events-server-2d4h.onrender.com/event/activities";
 //testing api 
-// const api = "http://localhost:3000/event/activities"
+ //const api = "http://localhost:3000/event/activities"
   useEffect(() => {
     const getEvents = async () => {
       try {
@@ -81,6 +149,43 @@ const sortEventsByPrice = () => {
   setFilteredEvent(sortedEvents);
 };
  
+const cities=['Harare','Bulawayo','Chitungwiza','Gweru','Victoria Falls','Mutare','Kwekwe','Kadoma','Marondera','Beitbridge']
+
+const filteredCities = cities.filter(city=>city.toLowerCase().startsWith(searchItem.toLowerCase()))
+const handleKeyPress=(e)=>{
+if(e.key==="Enter"){
+  cityFilter(searchItem.toLowerCase())
+  console.log("this is city: ",searchItem.toLowerCase())
+}
+}
+
+//function to display events matching city
+const cityFilter = (city)=>{
+  if (city ===""||city==="all"){
+    setFilteredEvent(eventsData)
+  }else{
+    setFilteredEvent(eventsData.filter((event)=> event.city.toLowerCase() === city.toLowerCase()))
+    console.log(filteredEvent)
+    console.log(city)
+  }
+}
+
+//function to show events matching user city
+const userCityFilter=()=>{
+  if(userCity){
+    cityFilter(userCity)
+    setShowCities(false)
+    setSearchItem(userCity)
+  }else{
+    cityFilter("")
+    setShowCities(false)
+    setSearchItem("cannot get your location")
+    console.log("no city")
+  }
+
+}
+
+
   return (
     <section className="events">
       <section className="categorybox">
@@ -88,7 +193,6 @@ const sortEventsByPrice = () => {
       <div className="categories">
         <div className="cat" onClick={()=>{
         filterEventsFunc("all")
-          
         }}>All</div>
         <div className="cat" onClick={(e)=>{
         filterEventsFunc(e.currentTarget.innerHTML.toLocaleLowerCase())
@@ -126,9 +230,15 @@ const sortEventsByPrice = () => {
       </div>
       </section>
   
-      <div className="heading">
-        <h3>Upcoming Events:  </h3>
+{/* <div className="extras">
+<button>Show Nearby Restuarants <FontAwesomeIcon icon={faLocationCrosshairs} /></button>
+<button>Sporting Events <FontAwesomeIcon icon={faSoccerBall} /></button>
+</div> */}
 
+      <div className="heading">
+        <h3>Upcoming Events: </h3>
+
+<div className="filterparent">
   {/* div to sort events */}
         <div className="sorting">
           <div className="sort-box ">
@@ -154,6 +264,47 @@ const sortEventsByPrice = () => {
         </div>
         {/* div to sort events */}
 
+ {/* div to filter events according to city */}
+ 
+ <div className="sorting">
+          <div className="sort-box ">
+              <input type="text" 
+               placeholder="Select City"
+               value={searchItem}
+               onChange={(e)=>{
+                setSearchItem(e.target.value)
+                setShowCities(true)
+               }}
+               onKeyDown={handleKeyPress}
+               
+              />
+              {searchItem.length!==0 &&
+              <div className="filter">
+                {showCities && 
+                  <ul>
+                  <li onClick={()=>{
+                    cityFilter("all")
+                    setShowCities(false)
+                    setSearchItem("all")
+                  }} >All</li>
+                  <li onClick={()=>{
+                    userCityFilter()
+                  }} >In My City</li>
+                  {filteredCities.map((city,index)=>{
+                  return <li key={index} onClick={()=>{
+                    cityFilter(city)
+                    setSearchItem(city)
+                    setShowCities(false)
+                  }}>{city}</li>
+                 })}</ul>
+                }
+           
+              </div> }
+          </div>
+        </div>
+        {/* div to filter events */}
+        </div>
+
       </div>
       {eventsData.length === 0 && !isLoading && !error&& <div className="nodata">
         No Events Yet... Check again Later or Add your own Event
@@ -164,6 +315,7 @@ const sortEventsByPrice = () => {
       {error == true && !isLoading  ? (
         <div className="apiError">Network Error, try reloading page</div>
       ) : (
+        
         <Event eventdata={filteredEvent} loading={isLoading} length={eventsData} />
       )}
 
