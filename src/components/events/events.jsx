@@ -46,7 +46,7 @@ useEffect(()=>{
     }
     GetUserLocation()
 },[])
-
+ 
 
 const {latitude,longitude}=position
 //function to get user city 
