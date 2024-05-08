@@ -11,7 +11,8 @@ import {
   faArrowDown,faArrowUp,
   faArrowRight,
   faLocationCrosshairs,
-  faSoccerBall
+  faSoccerBall,
+  faBullseye
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -28,13 +29,14 @@ const Events = () => {
   const [searchItem,setSearchItem]= useState("")
   const { data } = useAuth();
   const { token } = data;
-  const [locationPermission,setLocationPermission]=useState(null)
+  const [cityLoading, setCityLoading] = useState(true);
   const navigate = useNavigate();
  const [position,setPosition]=useState({latitude:null,longitude:null})
 const [userCity,setUserCity]=useState(null)
 
 //function to get user location, latitude and longitude
 useEffect(()=>{
+  console.log("fetching coordinates")
   const GetUserLocation = ()=>{
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition((position)=>{
@@ -54,7 +56,9 @@ const {latitude,longitude}=position
 const apiKey = "AuZRaa5NUz6I7It4H_YVC4I0_-joUkxVuwlooTxK_4KJvT7fhjT6fd-cxtg842GP"
 const bingMapsUrl = `https://dev.virtualearth.net/REST/v1/Locations/${latitude},${longitude}?o=json&key=${apiKey}`
 
+//function to get user city
 const getUserCity = async()=>{
+  console.log("fetching city")
   if(latitude && longitude){
     try {
       const response = await fetch(bingMapsUrl)
@@ -64,6 +68,8 @@ const getUserCity = async()=>{
       setUserCity(city)
     } catch (error) {
       console.error("error: ",error)
+    }finally{
+      setCityLoading(false);
     }
   }
 }
@@ -153,17 +159,15 @@ const cityFilter = (city)=>{
 
 //function to show events matching user city
 const userCityFilter=()=>{
-  if (position.latitude && position.longitude) {
-    getUserCity();
-  }
-  if(userCity){
+  
+  if( userCity){
     cityFilter(userCity)
     setShowCities(false)
     setSearchItem(userCity)
   }else{
     cityFilter("")
     setShowCities(false)
-    setSearchItem("cannot get your location")
+    setSearchItem("cannot get location")
     console.log("no city")
   }
 
@@ -258,6 +262,7 @@ const userCityFilter=()=>{
                onChange={(e)=>{
                 setSearchItem(e.target.value)
                 setShowCities(true)
+                getUserCity()
                }}
                onKeyDown={handleKeyPress}
                
