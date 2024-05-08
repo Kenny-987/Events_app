@@ -268,9 +268,9 @@ const userCityFilter=()=>{
                     setShowCities(false)
                     setSearchItem("all")
                   }} >All</li>
-                  /*<li onClick={()=>{
+                  <li onClick={()=>{
                     //userCityFilter()
-                  }} >In My City</li>*/
+                  }} >In My City</li>
                   {filteredCities.map((city,index)=>{
                   return <li key={index} onClick={()=>{
                     cityFilter(city)
