@@ -562,7 +562,7 @@ padding: 4px;
     border: 1px solid;
   }
   .filterparent{
-    border: 2px solid red;
+    
     display: flex;
     align-items: center;
     width: fit-content;
