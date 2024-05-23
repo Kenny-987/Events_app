@@ -4,7 +4,12 @@ import fixtures from "./fixtures.json"
 
 
 const Football = () => {
-const location = localStorage.getItem("location").replace(/"/g,"")
+let location = localStorage.getItem("location")
+if(location){
+location = localStorage.getItem("location").replace(/"/g,"")
+}else{
+  location = ""
+}
 //let location = "Bulawayo";
 // const [upComingMatches,setUpComingMatches] = useState(fixtures)
 const [filteredFixtures,setFilteredFixtures] = useState(fixtures)
