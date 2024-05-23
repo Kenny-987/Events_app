@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import "./sports.css"
 import Football from './sports/football'
 import Cricket from './sports/cricket'
