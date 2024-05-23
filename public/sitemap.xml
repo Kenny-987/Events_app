@@ -28,4 +28,11 @@
     <priority>0.6</priority>
   </url>
 
+    <!-- sports page -->
+  <url>
+    <loc>https://eventflow.co.zw/sportshub</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
