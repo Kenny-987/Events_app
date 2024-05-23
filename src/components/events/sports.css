@@ -1,0 +1,115 @@
+.sports-container{
+/* border: 1px solid red; */
+margin-top: 50px;
+color: #333;
+}
+.sports-container h1{
+    text-align: center;
+}
+.sport-types{
+/* border: 2px solid blue; */
+width: fit-content;
+display: flex;
+gap: 20px;
+margin: auto;
+margin-top: 10px;
+}
+
+
+.sport-types button{
+    font-size: 18px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+}
+.sport-types button:hover{
+    color: #fff;
+    background-color: #333;
+}
+.sport-body{
+    /* border: 1px solid black; */
+    width: 94%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #fff;
+    padding-top: 4px;
+    padding-bottom: 10px;
+}
+.football-container h3{
+text-align: center;
+}
+.filter-div{
+    width: 94%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.location-filter{
+    border: 1px solid #333;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-top: 10px;
+    color: #333;
+}
+.location-filter:hover {
+    background-color: #333;
+    color: #fff;
+}
+.fixture{
+    border: 1px solid #b6b6b6;
+    border-radius: 4px;
+    font-size: 15px;
+    text-align: center;
+    width: 94%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 8px;
+}
+.teams{
+    font-size: 18px;
+    font-weight: 700;
+    padding: 4px;
+    /* border: 1px solid black; */
+}
+.teams span {
+    text-transform:lowercase ;
+}
+
+.coming-soon{
+    text-align: center;
+    padding: 4px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+}
+.matchcity{
+    /* border: 1px solid red; */
+    width: 94%;
+    margin: auto;
+}
+@media (max-width: 600px) {
+    .sport-types{
+        /* border: 2px solid rgb(255, 0, 0); */
+        width: 94%;
+        display: flex;
+        justify-content: space-between;
+        gap:0;
+        margin: auto;
+        margin-top: 10px;
+        color: #333;
+        }
+}
+@media (min-width: 768px) {
+    .fixture{
+        width: 48%; 
+    }
+    .fixture-box{
+        display: flex;
+        flex-wrap: wrap 
+
+    }
+}

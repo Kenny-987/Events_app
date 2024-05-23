@@ -1,6 +1,5 @@
 import Event from "./event";
-import { Link, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import "./events.css";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../authContext";
@@ -12,9 +11,13 @@ import {
   faArrowRight,
   faLocationCrosshairs,
   faSoccerBall,
-  faBullseye
+  faBullseye,
+  faGolfBallTee,
+  faGolfBall,
+  faHouseChimney,
+  faLocationDot
 } from "@fortawesome/free-solid-svg-icons";
-
+import Sports from "./sports";
 
 
 const Events = () => {
@@ -66,6 +69,7 @@ const getUserCity = async()=>{
       const city = usersCity.resourceSets[0].resources[0].address.locality;
       console.log(city)
       setUserCity(city)
+      localStorage.setItem("location",JSON.stringify(city))
     } catch (error) {
       console.error("error: ",error)
     }finally{
@@ -218,10 +222,7 @@ const userCityFilter=()=>{
       </div>
       </section>
   
-{/* <div className="extras">
-<button>Show Nearby Restuarants <FontAwesomeIcon icon={faLocationCrosshairs} /></button>
-<button>Sporting Events <FontAwesomeIcon icon={faSoccerBall} /></button>
-</div> */}
+
 
       <div className="heading">
         <h3>Upcoming Events: </h3>
@@ -330,6 +331,13 @@ const userCityFilter=()=>{
         </div>
       )}
       </div>
+
+  {/* {explore more} */}
+      <div className="extras">
+    <h3 onClick={()=>{
+      navigate("/sportshub")
+    }}>Sports Hub <FontAwesomeIcon icon={faSoccerBall} /></h3> 
+</div> 
     </section>
   );
 };

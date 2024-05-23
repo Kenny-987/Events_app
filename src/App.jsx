@@ -12,6 +12,8 @@ import Policy from "./components/login/Policy";
 import Emailform from "./components/login/fogortpassword/Emailform";
 import "./index.css";
 import EventDetails from "./components/events/eventdetails";
+import MyMap from './components/events/Map'
+import Sports from "./components/events/sports";
 function App() {
   return (
     <>
@@ -28,6 +30,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/eventdetails" element={<EventDetails />} />
+          <Route path="/sportshub" element={<Sports />} />
         </Route>
       </Routes>
     </>
