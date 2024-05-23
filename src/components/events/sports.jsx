@@ -5,13 +5,17 @@ import Cricket from './sports/cricket'
 import Basketball from './sports/basketball'
 import Rugby from './sports/rugby'
 import Other from './sports/other'
+import { useNavigate } from "react-router";
+
 const Sports = () => {
 const [sportSection,setSportSection]=useState("football")
-
+const navigate = useNavigate()
 const setSection = (section)=>{
 setSportSection(section)
 }
-
+useEffect(()=>{
+  window.scroll(0,0)
+},[navigate])
 
   return (
     <section className='sports-container'>
